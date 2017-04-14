@@ -11,30 +11,13 @@
 </head>
 
 <body>
+    <h2>Use ReactDOM reader a div</h2>
     <div id="react-container"></div>
-    <h2>Create ul by react</h2>
-    <div id="react-ul-container"></div>
-    <h2>Create ul with JSX and Babel</h2>
-    <p>JSX is syntax extension to JavaScript used to produces React "elements".</p>
-    <div id="react-jsx-container"></div>
     <script>
         // create a div, not property, a string as child elemement 
         // put the div to #react-container
         ReactDOM.render(React.createElement('div', null, 'Hello world'), document.getElementById('react-container'));
-
-        ReactDOM.render(React.createElement('ul', null,
-            React.createElement('li', null, 'item1'),
-            React.createElement('li', null, 'item2'),
-            React.createElement('li', null, 'item3')), document.getElementById('react-ul-container'));
     </script>
-    <script type="text/babel">
-        ReactDOM.render( <ul>
-                <li>apple</li> 
-                <li>facebook</li> 
-                <li>google</li> 
-                </ul>, document.getElementById('react-jsx-container'));
-    </script>
-
 </body>
 
 </html>
