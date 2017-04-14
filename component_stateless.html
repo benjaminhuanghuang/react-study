@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello React Component</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+</head>
+
+<body>
+    <h2>Use ReactDOM reader a div</h2>
+    <div id="react-container"></div>
+    <script type="text/babel">
+        const MyComponent = ()=>
+        {
+            return <div> 
+                <h1>Hello World</h1>
+                <p>This is my first React stateless Component  </p>
+            </div>
+        }
+       
+        ReactDOM.render(<MyComponent/>, document.getElementById('react-container'));
+    </script>
+</body>
+
+</html>
