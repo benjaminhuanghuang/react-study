@@ -38,7 +38,7 @@
                 return ( 
                     <div className="note">
                         <textarea></textarea>
-                        <button onClick={this.save}></button>
+                        <button onClick={this.save.bind(this)}>SAVE</button>
                     </div>
                     )
             }
@@ -49,8 +49,8 @@
                     <div className="note">
                         <p>{this.props.children}</p>
                         <span>
-                          <button onClick={this.edit}>EDIT</button>
-                          <button onClick={this.remove}>X</button>
+                          <button onClick={this.edit.bind(this)}>EDIT</button>
+                          <button onClick={this.remove.bind(this)}>X</button>
                         </span>
                     </div>
                     )
