@@ -18,15 +18,17 @@
             render(){
                 return <div> 
                         <h1>{this.props.text}</h1>
-                        <p>This is my first React Component in ES6 </p>
+                        <p>{this.props.children} </p>
                       </div>
             }
         };
 
         ReactDOM.render( <div>
-                            <MyComponent text="Hello React1"/>
-                            <MyComponent text="Hello React2"/>
-                            <MyComponent text="Hello React3"/>
+                            <MyComponent text="Component instance 1">
+                                This is message (children property)
+                            </MyComponent>
+                            <MyComponent text="Component instance 2"/>
+                            <MyComponent text="Component instance 3"/>
                         </div>, 
                         document.getElementById('react-container'));
     </script>
