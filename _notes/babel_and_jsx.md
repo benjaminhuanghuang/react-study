@@ -14,3 +14,5 @@
                 </ul>, document.getElementById('react-jsx-container'));
     </script>
 
+# Online jsx transpile
+    https://babeljs.io/repl/  transpile jsx to javascript
