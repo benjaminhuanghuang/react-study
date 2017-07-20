@@ -28,6 +28,7 @@
                 this.setState({editing:true})
             }
             save(){
+                var val = this.refs.newText.value
                 this.setState({editing:false})
             }
             remove() {
@@ -37,7 +38,7 @@
             {
                 return ( 
                     <div className="note">
-                        <textarea></textarea>
+                        <textarea ref="newText"></textarea>
                         <button onClick={this.save.bind(this)}>SAVE</button>
                     </div>
                     )
@@ -66,8 +67,30 @@
                 }
             }
         }
-        
-        ReactDOM.render(<Note>Hello World</Note>, 
+        class Board extends React.Component{
+            propTypes:{
+                count: function(prop, propName)
+                {
+                    if(typeof props[propName] !== 'number')
+                    {
+                        return new Error('The count must be a nubmer');
+                    }
+                    if (props[propName] > 100)
+                    {
+                        return new Error('Too much notes.');
+                    }
+                }
+            }
+
+            render() {
+                return <div className='board'>
+                    {this.props.count}
+                </div>
+             }
+             
+        }
+
+        ReactDOM.render(<Board count={10}></Board>, 
             document.getElementById('react-container'))
     </script>
 </body>
