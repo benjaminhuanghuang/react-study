@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.js"></script>
+</head>
+
+<body>
+    <div id="content"></div>
+    <script type="text/javascript">
+        /*
+            arguments of createElement
+                1. element name
+                2. json data
+                3. Child element or inner text 
+        */
+        let h1 = React.createElement('h1', null, 'Hello world!')
+        ReactDOM.render(
+            React.createElement('div', null, h1, h1, h1),
+            document.getElementById('content')
+        )
+    </script>
+</body>
+
+</html>

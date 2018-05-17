@@ -16,3 +16,18 @@
 
 # Online jsx transpile
     https://babeljs.io/repl/  transpile jsx to javascript
+
+
+# Command line
+Install babel
+```
+    npm i babel-cli -g
+```
+using the Babel CLI with a watch (-w) and a directory flag (-d) to compile all
+source JSX files from /jsx to a destination folder /js, and recompile on
+changes.
+```
+    "scripts": {
+    "build-clock": "babel /jsx -d /js -w"
+    },
+```
