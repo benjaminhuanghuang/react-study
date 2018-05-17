@@ -2,7 +2,7 @@
 class Clock extends React.Component {
     constructor(props) {
         super(props)
-        this.launchClock()
+        this.launchClock();
         // Set init state
         this.state = { currentTime: (new Date()).toLocaleString() }
     }
@@ -25,6 +25,13 @@ class Clock extends React.Component {
         }.bind(this), 1000)   // manual bind this
     }
 
+    launchClock_error() {
+        setInterval(function(){
+                this.setState({   // TypeError: this.setState is not a function
+                currentTime: (new Date()).toLocaleString()
+            })
+        }, 1000)
+    }
 
     render() {
         console.log('Rendering Clock...')
