@@ -8,6 +8,7 @@ class Clock extends React.Component {
     }
 
     launchClock() {
+        // arrow get the current value of this, the Clock object
         setInterval(() => {
             console.log('Updating time...')
             this.setState({
@@ -15,7 +16,16 @@ class Clock extends React.Component {
             })
         }, 1000)
     }
-    
+
+    launchClock_2() {
+        setInterval(function () {
+            this.setState({
+                currentTime: (new Date()).toLocaleString()
+            })
+        }.bind(this), 1000)   // manual bind this
+    }
+
+
     render() {
         console.log('Rendering Clock...')
         return <div>{this.state.currentTime}</div>
