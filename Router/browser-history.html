@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser history demo</title>
+</head>
+
+<body>
+  <a onclick="push('/link1')">Go to link 1</a>
+  <br />
+  <a onclick="push('/link2')">Go to link 2</a>
+
+  <script type="text/javascript">
+    function push(path) {
+      // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
+      // state, title, url
+      history.pushState({ currentPath: path }, `This is ${path}, ignored`, path)
+    }
+
+    // Can not response to  history.pushState
+    // Response to browser forward and back
+    window.addEventListener('popstate', (e) => {
+      console.log(e)
+      console.log(history)
+      console.log(history.length)
+    })
+  </script>
+</body>
+
+</html>

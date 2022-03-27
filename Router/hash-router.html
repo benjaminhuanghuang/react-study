@@ -1,0 +1,21 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hash router demo</title>
+</head>
+
+<body>
+  <a href="#/link1">Go to link 1</a>
+  <br />
+  <a href="#/link2">Go to link 2</a>
+
+  <script type="text/javascript">
+    window.addEventListener('hashchange', () => {
+      console.log(window.location.hash)
+    })
+  </script>
+</body>
+
+</html>
