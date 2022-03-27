@@ -2,12 +2,9 @@
 JavaScript引擎和页面渲染引擎两个线程是互斥的，当其中一个线程执行时，另一个线程只能挂起等待
 
 如果 JavaScript 线程长时间地占用了主线程，那么渲染层面的更新就不得不长时间地等待，界面长时间不更新，会导致页面响应度变差，用户可能会感觉到卡顿
-
 而这也正是 React 15 的 Stack Reconciler所面临的问题，当 React在渲染组件时，从开始到渲染完成整个过程是一气呵成的，无法中断
 
-如果组件较大，那么js线程会一直执行，然后等到整棵VDOM树计算完成后，才会交给渲染的线程
-
-这就会导致一些用户交互、动画等任务无法立即得到处理，导致卡顿的情况
+如果组件较大，那么js线程会一直执行，然后等到整棵VDOM树计算完成后，才会交给渲染的线程，这就会导致一些用户交互、动画等任务无法立即得到处理，导致卡顿的情况
 
 
 
@@ -28,8 +25,12 @@ React16架构可以分为三层：
 
 
 ## Fiber
+
 React Fiber is a completely backward-compatible rewrite of the old reconciler. 
 This new reconciliation algorithm from React is called `Fiber Reconciler`. 
+
+Fiber 数据结构 + 新算法 = fiber架构
+
 
 ## Reconciliation
 Reconciliation is the `algorithm for diffing two DOM trees`. When the UI renders for the first time, React creates a tree of nodes. Every individual node represents the React element. It creates a virtual tree (which is known as virtualDOM) that’s a copy of the rendered DOM tree. After any update from the UI, it recursively compares every tree node from two trees. The cumulative changes are then passed to the renderer.
