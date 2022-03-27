@@ -1,3 +1,17 @@
+
+## Use cases
+```
+useEffect(() => {}) //任何元素变化都执行
+
+useEffect(() => {},[n]) //n变化执行
+
+useEffect(() => {},[])  //挂载执行
+
+useEffect(() => {
+    return ()=>{}  //消亡执行
+},[]) 
+```
+
 Effectr callback are synchronous to prevent race conditions. Do not write code like
 ```
     useEffect(async ()=> {
