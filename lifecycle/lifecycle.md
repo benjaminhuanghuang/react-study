@@ -1,3 +1,8 @@
+- 卡老师的硬核React面试题
+  - https://www.bilibili.com/video/BV16t4y1r7oJ/?spm_id_from=333.788.recommend_more_video.0
+
+
+
 React components lifecycle events:
 - constructor()—Happens when an element is created and lets you set the default properties and the initial state 
 - Mounting
