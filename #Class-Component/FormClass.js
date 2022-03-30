@@ -16,13 +16,20 @@ class FormClass extends Component {
     })
   }
 
+  handleSubmit = (event) =>{
+    event.preventDefault();
+
+  }
+
+  
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <div>
           <label>Username</label>
           <input type="text" value={this.state.username} onChange={this.handleUsernameChange}/>
         </div>
+        <button type="sybmit">Submit</button>
       </form>
     )
   }
