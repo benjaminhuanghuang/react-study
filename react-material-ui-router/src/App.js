@@ -8,7 +8,7 @@ import { Drawer, List, ListItem, ListItemIcon, ListItemText } from "@material-ui
 import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
 //
-import Home from "./Home";
+import GridLayout from "./GridLayout";
 import About from "./About";
 
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +37,7 @@ function App() {
                 <ListItemIcon>
                   <HomeIcon />
                 </ListItemIcon>
-                <ListItemText primary={"Home"} />
+                <ListItemText primary={"GridLayout"} />
               </ListItem>
             </Link>
             <Link to="/about" className={classes.link}>
@@ -51,7 +51,7 @@ function App() {
           </List>
         </Drawer>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<GridLayout />}></Route>
           <Route path="/about" element={<About />}></Route>
         </Routes>
       </div>
