@@ -1,7 +1,8 @@
 import './App.css';
 import { Component } from 'react';
-import NewComp from './NewComp';
-import NewCompStore from './NewCompStore';
+// components
+import UsersContainer from './components/UsersContainer'
+
 //
 class App extends Component {
   styles = {
@@ -12,9 +13,7 @@ class App extends Component {
   render(){
     return (
       <div className='App'>
-        <h1 style={this.styles}>Welcome</h1>
-        <NewComp/>
-        <NewCompStore/>
+        <UsersContainer />
       </div>
     )
   }
