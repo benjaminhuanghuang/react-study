@@ -8,3 +8,9 @@
 ```
   npm i react-hook-form
 ```
+
+
+
+```
+  import {useForm, SubmitHandler} from 'react-hook-from'
+```
