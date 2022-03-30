@@ -1,4 +1,7 @@
 ## Reference
+- https://redux.js.org/
+
+
 - [React Redux Tutorial for Beginners: The Definitive Guide (2020)](https://www.valentinog.com/blog/redux/)
 
 - [React Redux Tutorial for Beginners: Simply Explained](https://chriscourses.com/blog/redux)
