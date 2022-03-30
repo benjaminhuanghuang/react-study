@@ -14,3 +14,15 @@
 ```
   import {useForm, SubmitHandler} from 'react-hook-from'
 ```
+
+
+## Validation
+```
+  npm i @hookform/resolvers yup
+```
+
+
+## Watch
+
+
+

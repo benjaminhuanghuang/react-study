@@ -11,10 +11,11 @@ function Form() {
     <form onSubmit={handleSubmit(formSubmitHandler)}>
       <input defaultValue="example@a.com" {...register('email')}/>
       <input  {...register('password', {required:true})}/>
+      {errors.password && <span>Errror</span>}
       <input type="submit"></input>
     </form>
 
-  </div>;
+  </div>; 
 }
 
 export default Form;
