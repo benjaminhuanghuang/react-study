@@ -8,11 +8,31 @@ From Facebook, integrated with create-react-app and @vue/cli
 - Mocha 测试框架，在vue-cli中配合 chai 断言库实现单元测试（ Mocha+chai ）
 
 
-##
-- react-test-library
-created by Facebook
+## Tesing libaray
+- React Testing Library [recommand]
+```
+  npm install --save-dev @testing-library/react
+```
 
-- enzyme
+```
+import {render, screen, waitFor} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+
+test('loads and displays greeting', async () => {
+
+  render(<FetchGreeting />)
+
+  userEvent.click(screen.getByText('Load Greeting'))
+
+  await screen.findByRole('heading', {name: 'hello there'})
+
+  expect(screen.getByRole('button')).toHaveAttribute('disabled')
+}
+
+
+```
+
+- enzyme 
 created by Airbnb
 
 
