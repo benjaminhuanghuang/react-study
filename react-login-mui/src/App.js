@@ -7,7 +7,8 @@ import './App.css';
 import Home from "./views/home";
 import SignIn from "./views/signIn";
 import SignUp from "./views/signUp";
-
+import ProtectedPage from './views/ProtectedPage';
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="home" element={<Home />} />
         <Route path="signUp" element={<SignUp />} />
         <Route path="/" element={<SignIn />} />
+        <Route path="/protected" element={<ProtectedPage />} />
       </Routes>
     </BrowserRouter>
   );

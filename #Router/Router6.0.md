@@ -1,3 +1,4 @@
+## "Switch" is replaced by routes "Routes"
 In react-router-dom v6, "Switch" is replaced by routes "Routes". 
 You need to update the import from
 ```
@@ -19,3 +20,13 @@ to
 In react-router-dom, you also do not need to use the exact in the Route declaration.
 
 For more information, you can visit the official documentation: upgrade to react-router-dom v6
+
+## Redirect is replaced by Navigate
+
+For react-router-dom v6, simply replace Redirect with Navigate
+
+import { Navigate } from 'react-router-dom';
+.
+.
+.
+{ component: () => <Navigate to="/404" /> }
