@@ -1,6 +1,8 @@
 ## Offical documents
 - [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
 
+https://react-redux.js.org/api/hooks
+
 ## Cources
 - Full React Course 2020()
 -  https://github.com/john-smilga/react-advanced-2020
