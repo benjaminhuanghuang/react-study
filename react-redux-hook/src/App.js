@@ -1,22 +1,21 @@
-import './App.css';
-import { Component } from 'react';
-import NewComp from './NewComp';
-import NewCompStore from './NewCompStore';
+import "./App.css";
+import { Component } from "react";
+import HooksCakeContainer from "./components/HooksCakeContainer";
+import NewCakeContainer from "./components/NewCakeContainer";
 //
 class App extends Component {
   styles = {
-    fontStyle: 'bold',
-    color: 'teal'
-  }
+    fontStyle: "bold",
+    color: "teal",
+  };
 
-  render(){
+  render() {
     return (
-      <div className='App'>
-        <h1 style={this.styles}>Welcome</h1>
-        <NewComp/>
-        <NewCompStore/>
+      <div className="App">
+        <NewCakeContainer />
+        <HooksCakeContainer />
       </div>
-    )
+    );
   }
 }
 export default App;
