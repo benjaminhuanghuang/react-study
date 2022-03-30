@@ -18,10 +18,16 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+//
+import { useNavigate } from "react-router-dom";
+//import { signIn } from "../../services/authService";
+
 
 const theme = createTheme();
 
 export default function SignIn() {
+  let navigate = useNavigate();
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -29,6 +35,8 @@ export default function SignIn() {
       email: data.get("email"),
       password: data.get("password"),
     });
+    // call service
+    // signIn(navigate, data.get("email"), data.get("password"));
   };
 
   return (
@@ -96,7 +104,7 @@ export default function SignIn() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link href="#" variant="body2"  onClick={() => navigate("signUp")}>
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
