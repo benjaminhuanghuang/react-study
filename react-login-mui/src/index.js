@@ -16,7 +16,7 @@ if (localStorage.jwtToken) {
   store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
 }
 
-ReactDOM.render(
+ReactDOM.render( 
   <React.StrictMode>
     <App />
   </React.StrictMode>,
