@@ -30,6 +30,7 @@ export default function SignIn() {
   
   const handleSubmit = (event) => {
     event.preventDefault();
+    debugger
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get("email"),
