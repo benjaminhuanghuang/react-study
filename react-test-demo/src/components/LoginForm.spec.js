@@ -52,7 +52,7 @@ test("Should show email error message on invalid email", () => {
   const emailInputElement = screen.getByRole("textbox", {
     name: /email/i,
   });
-  const email = "aaa.com";
+  const wrong_email = "aaa.com";
 
   const submitButtonElement = screen.getByRole("button", {
     name: /submit/i,
@@ -61,9 +61,39 @@ test("Should show email error message on invalid email", () => {
   let  emailErrorElement = screen.queryByText(errorMsg);
   expect(emailErrorElement).not.toBeInTheDocument();
 
-  userEvent.type(emailInputElement, email);
+  userEvent.type(emailInputElement, wrong_email);
   userEvent.click(submitButtonElement);
 
   emailErrorElement = screen.queryByText(errorMsg);
   expect(emailErrorElement).toBeInTheDocument();
+});
+
+
+test("Should show password error message if password is less than 5 charcters", () => {
+  render(<LoginFrom />);
+
+  const errorMsg = /The password you entered should contain 5 or more characters./i;
+  const correct_email = "aaa@bbb.com";
+  const pwd = '123';
+
+  const emailInputElement = screen.getByRole("textbox", {
+    name: /email/i,
+  });
+  const passwordInputElement = screen.getByLabelText(/^password/i);
+  
+
+  // getByText will throw if the element does't exist
+  let  passwordErrorElement = screen.queryByText(errorMsg);
+  expect(passwordErrorElement).not.toBeInTheDocument();
+
+  userEvent.type(emailInputElement, correct_email);
+  userEvent.type(passwordInputElement, pwd);
+
+  const submitButtonElement = screen.getByRole("button", {
+    name: /submit/i,
+  });
+  userEvent.click(submitButtonElement);
+
+  passwordErrorElement = screen.queryByText(errorMsg);
+  expect(passwordErrorElement).toBeInTheDocument();
 });
