@@ -2,13 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addFoodToCustomer } from "../feature/customerSlice";
 
-interface CustomerCardType {
-  id: string;
-  name: string;
-  food: string[];
-}
 
-function CustomerCard({ id, name, food }: CustomerCardType) {
+function CustomerCard({ id, name, food }) {
   const [customerFoodInput, setCustomerFoodInput] = useState("");
   const dispatch = useDispatch();
   return (

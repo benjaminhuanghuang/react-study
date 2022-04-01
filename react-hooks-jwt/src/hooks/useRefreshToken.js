@@ -1,3 +1,6 @@
+/*
+
+*/
 import axios from '../api/axios';
 import useAuth from './useAuth';
 
@@ -6,6 +9,7 @@ const useRefreshToken = () => {
 
     const refresh = async () => {
         const response = await axios.get('/refresh', {
+            // send cookies with request 
             withCredentials: true
         });
         setAuth(prev => {

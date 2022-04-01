@@ -4,12 +4,9 @@ import { addCustomer } from "../feature/customerSlice";
 import { removeReservation } from "../feature/reservationSlice";
 import { v4 as uuid } from "uuid";
 
-interface ReservationCardType {
-  name: string;
-  index: number;
-}
 
-function ReservationCard({ name, index }: ReservationCardType) {
+
+function ReservationCard({ name, index }) {
   const dispatch = useDispatch();
   return (
     <div
