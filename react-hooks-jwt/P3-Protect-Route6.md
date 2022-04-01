@@ -1,4 +1,4 @@
-# React Protected Routes | Role-Based Authorization | React Router v6
+# React Protected Routes | Role-Based Authorization | React Router v6 [2022]
   - https://www.youtube.com/watch?v=oUZjO00NkhY&ab_channel=DaveGray
   - https://github.com/gitdagray/react_jwt_auth
 
