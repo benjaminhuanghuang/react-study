@@ -27,3 +27,15 @@ Storing a reference to the refresh token in the database will allow refresh toke
 ```
   npm i axios
 ```
+
+
+## Protected Routes
+```
+  <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
+    <Route path="admin" element={<Admin />} />
+  </Route>
+
+  <Route element={<RequireAuth allowedRoles={[ROLES.Editor, ROLES.Admin]} />}>
+    <Route path="lounge" element={<Lounge />} />
+  </Route>
+```

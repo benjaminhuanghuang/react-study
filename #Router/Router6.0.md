@@ -30,3 +30,21 @@ import { Navigate } from 'react-router-dom';
 .
 .
 { component: () => <Navigate to="/404" /> }
+
+
+## Outlet 
+
+Outlet component represnets all the children of the layout
+```
+import { Outlet } from "react-router-dom"
+
+const Layout = () => {
+    return (
+        <main className="App">
+            <Outlet />
+        </main>
+    )
+}
+
+export default Layout
+```
