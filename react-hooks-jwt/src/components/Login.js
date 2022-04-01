@@ -42,6 +42,7 @@ const Login = () => {
       setAuth({ user, pwd, roles, accessToken });
       setUser("");
       setPwd("");
+      // jump back
       navigate(from, { replace: true });
     } catch (err) {
       if (!err?.response) {
