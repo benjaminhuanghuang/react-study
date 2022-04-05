@@ -49,6 +49,7 @@ test('loads and displays greeting', async () => {
 ## Mock
 - Jest
 - Sinon
+
 ## babel
     If you want to test code need transpile, you need add .babelrc
     If you use webpack you need install babel-jest
