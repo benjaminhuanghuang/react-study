@@ -25,3 +25,11 @@ script
 ```
   nodemon -exec babel-node src/server.js
 ```
+
+
+## react-dom/server 
+- renderToString : create HTML with attribute like data-react-id
+
+- renderToStaticMarkup: without extra attributes
+
+
