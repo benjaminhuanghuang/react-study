@@ -131,7 +131,16 @@ npm  i -D json-server
 
 json-server --watch src/job.json --port 8964
 ```
-
+add config in vite.config.js
+```js
+proxy: {
+  '/api': {
+    target: 'http://localhost:8000',
+    changeOrigin: true,
+    rewrite: (path) => path.replace(/^\/api/, ''),
+  },
+},
+  ```
 ## Fetch data
 ```jsx
 useEffect(() => {
