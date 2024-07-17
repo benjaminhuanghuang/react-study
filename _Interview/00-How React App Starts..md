@@ -1,6 +1,7 @@
 # How React App Starts
 
 1. Start from main.jsx
+
 2. In the entry file, the React app starts by calling
 ```js
 /*
@@ -22,6 +23,11 @@ const tag = React.createElement("h1", {}, "Hello")
     <!--Content of the App component-->    
 </div>
 ```
+
+3. Virtual DOM
+
+5. Rendering
+
 
 
 

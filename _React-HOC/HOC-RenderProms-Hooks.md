@@ -3,7 +3,7 @@ HOC / Render Props / Hooks 三种写法都可以提高代码的复用性，
 
 HOC 是对传入的组件进行增强后，`返回新的组件`；
 常见例子：React Redux 的 connect，将 Redux Store 和 React 组件联系起来。
-```
+```js
 // react-redux connect 例子
 const ConnectedMyComponent = connect(mapState)(MyComponent);
 
