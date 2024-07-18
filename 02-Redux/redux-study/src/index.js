@@ -44,7 +44,7 @@ function* generateID() {
 const generateId = generateID();
 const genBookId = () => generateId.next().value;
 
-addBook.addEventListener('click', () => {
+addBookBtn.addEventListener('click', () => {
     const bookName = bookNameInput.value;
     if (bookName) {
         store.dispatch({
@@ -56,7 +56,7 @@ addBook.addEventListener('click', () => {
         });
     }
 });
-delBook.addEventListener('click', () => {
+delBookBtn.addEventListener('click', () => {
     const bookId = bookIdInput.value;
     if (bookId) {
         store.dispatch({
