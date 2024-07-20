@@ -23,6 +23,8 @@ Have access to lifecycle methods such as componentDidMount, componentDidUpdate, 
 Methods often require binding this, either manually in the constructor or using arrow functions.
 ```js
     <button onClick={this.handleClick.bind(this)}>
+    or
+    <button onClick={this.handleClick.bind(this, id)} />
 ```
 
 ## Function Component
