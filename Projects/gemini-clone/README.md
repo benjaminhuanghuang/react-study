@@ -20,3 +20,10 @@ Search outfit font
 https://fonts.google.com/specimen/Outfit
 Get font, Get embed code, @import
 Put style into index.css
+
+
+## Gemini 
+Get API key
+
+Get code
+
