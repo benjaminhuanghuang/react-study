@@ -3,7 +3,7 @@
 https://www.youtube.com/watch?v=0yboGn8errU
 
 
-Create project
+## Create project
 ```sh
 npm create vite@latest
     React
@@ -13,3 +13,10 @@ npm create vite@latest
 Install dependencies
 ```sh
 ```
+
+
+## Font
+Search outfit font 
+https://fonts.google.com/specimen/Outfit
+Get font, Get embed code, @import
+Put style into index.css
