@@ -36,7 +36,7 @@ function Main() {
                 </div>
                 <div className="main-bottom">
                     <div className="search-box">
-                        <input type="text" placeholder="Enter a prompt here" />
+                        <input onChange={(e)=> setInput(e.target.value)}type="text" placeholder="Enter a prompt here" />
                         <div>
                             <img src={assets.gallery_icon} alt="" />
                             <img src={assets.mic_icon} alt="" />
