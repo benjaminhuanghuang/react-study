@@ -8,12 +8,21 @@ unmount
 ```js
 import { useEffect } from 'react';
 
-useEffect(()=>{
-
-    }, []
-)
+useEffect(callback, [])
 ```
 dependency:
 - undefine:  every time
 - []: only at mount
 
+## How it works
+
+
+
+## Bind a event handler
+```js
+useEffect(() => {
+    window.addEventListener('resize', onResize);
+    
+    return (() => { window. removeEventListener('resize', onResize);});
+}, []);
+```
