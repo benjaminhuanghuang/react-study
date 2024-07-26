@@ -25,6 +25,9 @@ npm i -D @testing-library/react
 # dom assertion like: expect(heading).toHaveTextContent(/hello/i);
 npm i -D @testing-library/jest-dom
 
+# User interactions, events
+npm i -D @testing-library/user-event
+
 # emulates the DOM environment
 npm i -D jsdom@24.0.0
 
