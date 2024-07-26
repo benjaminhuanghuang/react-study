@@ -1,9 +1,15 @@
 # React  Testing
 
-Effective, valuable, easy-to-maintain
+Effective, valuable, easy-to-maintain/maintainable, robust, trustworthy
+
 
 ## What to test
 - Testing Components
+  - Test rendering
+  - Test user interactions
+  - Test the behavior not the implementation/details
+  - Test teh behavior not the styles
+
 - Mocking APls
 - Testing Forms
 - Testing State Management
@@ -29,5 +35,5 @@ Install Vitest Snippets VS code extension
 
 # package.json
 "test": "vitest",
-"test:ui": "vitest --ui"
+"test:ui": "vitest --ui"   # show testing result in web browser
 ```
