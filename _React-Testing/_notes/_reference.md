@@ -20,3 +20,7 @@ Unit Testing React Components | Redux-Thunk | Redux-Saga (Full Guide, September 
 
 
 - Jest介绍及快速上手 [https://juejin.cn/post/6859155206312034311]
+
+
+## React Testing for Beginners: Start Here! (By Mosh, 2024 )
+https://github.com/mosh-hamedani/react-testing-starter

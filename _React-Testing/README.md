@@ -1,12 +1,6 @@
-# React  Redux  UT Study
+# React  Testing
 
-## Setup
-setup.sh
-
-Update
-```
-  npx npm-check-updates -u
-```
+Effective, valuable, easy-to-maintain
 
 ## What to test
 - Testing Components
@@ -21,3 +15,19 @@ Update
 - Test Coverage
 - Test redux
 - Test redux-thunk
+
+
+## Testing Framework
+- Jest - Experimental support for ECMAScript Modules
+- Mocha
+- Jasmine
+- Vitest - Supports ESM, TypeScript, and JSX
+```sh
+npm i -D vitest
+
+Install Vitest Snippets VS code extension
+
+# package.json
+"test": "vitest",
+"test:ui": "vitest --ui"
+```
