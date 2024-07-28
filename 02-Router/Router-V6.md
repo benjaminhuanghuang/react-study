@@ -1,3 +1,26 @@
+# React Router V6
+Setup
+```bash
+    npm i react-router-dom
+```
+
+Create router
+```ts
+import { createBrowserRouter } from 'react-router-dom'
+
+export const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <App />,
+        errorElement: <NotFoundPage />
+    },
+    { path: '/dashboard', element: <Dashboard /> },
+    { path: '/contact', element: <Contact /> },
+]);
+
+<RouterProvider router={router}/>
+```
+
 ## "Switch" is replaced by routes "Routes"
 In react-router-dom v6, "Switch" is replaced by routes "Routes". 
 You need to update the import from
