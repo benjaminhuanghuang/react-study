@@ -1,6 +1,8 @@
 # What is Fiber
 
-A Fiber is a plain JS object, = unit of work 
+A Fiber is a plain JS object, = unit of work processed by function like beginWork() and completeWork()
+
+The work 
 - state change
 - lifecycle function
 - DOM change
