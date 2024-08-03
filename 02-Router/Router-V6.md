@@ -57,7 +57,7 @@ import { Navigate } from 'react-router-dom';
 
 ## Outlet 
 
-Outlet component represnets all the children of the layout
+Outlet component represents all the children of the layout
 ```
 import { Outlet } from "react-router-dom"
 
