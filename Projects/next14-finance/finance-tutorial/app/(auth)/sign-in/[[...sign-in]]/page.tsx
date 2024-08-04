@@ -1,4 +1,4 @@
-import { SignIn } from "@clerk/nextjs";
+import { ClerkLoaded, ClerkLoading, SignIn } from "@clerk/nextjs";
 
 export default function Page() {
   return (
@@ -13,10 +13,18 @@ export default function Page() {
           </p>
         </div>
         <div className="flex items-center justify-center mt-8">
+          <ClerkLoaded>
           <SignIn path="/sign-in" />
+          </ClerkLoaded>
+          <ClerkLoading>
+            <p>Loading...</p>
+          </ClerkLoading>
         </div>
       </div>
+      <div className="h-full bg-blue-600 hidden lg:flex items-center justify-center">
+        
 
+      </div>
     </div>
   );
 }

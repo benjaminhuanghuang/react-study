@@ -10,7 +10,7 @@ npx shadcn-ui@latest init
 npx shadcn-ui@latest add button
 ```
 
-## Auth
+## Auth using Clerk
 https://dashboard.clerk.com/
 Create new application
 
@@ -25,3 +25,7 @@ Modify layout.tsx, Add ClerkProvider
 
 Add middleware.ts
 https://clerk.com/docs/references/nextjs/custom-signup-signin-pages?_gl=1*v9dl36*_gcl_au*MTkwMzIwMjY3MS4xNzIyODAzNDU4*_ga*MjE0MTY5NzQwMS4xNzIyODAzNDU4*_ga_1WMF5X234K*MTcyMjgwMzQ1Ny4xLjEuMTcyMjgwMzUyOC4wLjAuMA..
+
+
+1: 00: 00
+
