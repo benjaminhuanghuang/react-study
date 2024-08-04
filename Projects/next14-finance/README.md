@@ -20,3 +20,8 @@ npm i @clerk/nextjs
 ```
 
 Set env variable
+
+Modify layout.tsx, Add ClerkProvider
+
+Add middleware.ts
+https://clerk.com/docs/references/nextjs/custom-signup-signin-pages?_gl=1*v9dl36*_gcl_au*MTkwMzIwMjY3MS4xNzIyODAzNDU4*_ga*MjE0MTY5NzQwMS4xNzIyODAzNDU4*_ga_1WMF5X234K*MTcyMjgwMzQ1Ny4xLjEuMTcyMjgwMzUyOC4wLjAuMA..
