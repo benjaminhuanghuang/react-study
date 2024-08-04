@@ -9,3 +9,14 @@ npx create-next-app@latest finance-tutorial
 npx shadcn-ui@latest init
 npx shadcn-ui@latest add button
 ```
+
+## Auth
+https://dashboard.clerk.com/
+Create new application
+
+Install
+```bash
+npm i @clerk/nextjs
+```
+
+Set env variable
