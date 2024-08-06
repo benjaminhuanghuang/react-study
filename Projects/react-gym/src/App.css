@@ -18,13 +18,13 @@
   font-weight: 500;
 }
 
-@meida screen and (max-width: 768px){
+@media screen and (max-width: 768px){
   .section-title{
     font-size: 2.5rem;
   }
 }
 
-@meida screen and (max-width: 576px){
+@media screen and (max-width: 576px){
   .section-title{
     font-size: 2rem;
   }
