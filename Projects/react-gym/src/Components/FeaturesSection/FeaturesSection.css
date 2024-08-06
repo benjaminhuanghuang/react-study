@@ -1,0 +1,13 @@
+#feature .card-title {
+    font-size: 2rem;
+}
+
+#feature svg {
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    #feature .card-title {
+        font-size: 1.75rem;
+    }    
+}
