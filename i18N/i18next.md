@@ -1,0 +1,1 @@
+https://react.i18next.com/

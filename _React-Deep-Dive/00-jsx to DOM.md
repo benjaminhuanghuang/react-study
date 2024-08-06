@@ -1,5 +1,7 @@
 # JXS to DOM
 
+JSX will be compiled to React Element
+
 ![](./jsx-to-dom.png)
 
 ```js
