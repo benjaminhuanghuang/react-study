@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import AddUserForm from '../components/forms/AddUserForm';
+import UserTable from '../components/userTable/UserTable';
 //
 import api from '../services/api';
 import qs from 'querystring';
@@ -50,6 +51,7 @@ const Home = (props) => {
                 </div>
                 <div className="col s12 l6">
                     <h5>Users</h5>
+                    <UserTable users={users} editRow={editRow} eleteRow={deleteRow} />
                 </div>
             </div>
         </div>

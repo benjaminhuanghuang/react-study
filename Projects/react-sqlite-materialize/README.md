@@ -7,26 +7,40 @@ https://codingshiksha.com/react/build-react-js-express-sqlite3-crud-app-using-se
 Sequelize
 
 
-## frontend
+## Frontend
 ```sh
 npm i axios querystring
 npm i -D sequelize-cli
 ```
+
 Update index.html
 ```html
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
- 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
 
 
-## backend
+## Backend
 ```sh
 npm init -y
 npm i express sequelize sqlite3 cors
 npm i -D sequelize-cli
 ```
+
+Install sqlite3
+```bash
+brew install sqlite3
+sqlite3
+
+.quit
+```
+
+
+Start server
+```bash
+nodemon index.js
+```
+
