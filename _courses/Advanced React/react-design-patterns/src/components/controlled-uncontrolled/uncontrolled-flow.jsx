@@ -6,12 +6,12 @@ export const UncontrolledFlow = ({ children, onDone }) => {
 
   const currentChild = React.Children.toArray(children)[currentStepIndex];
 
-  const next = () => {
+  const goNext = () => {
     setCurrentStepIndex(currentStepIndex + 1);
   };
 
   if (React.isValidElement(currentChild)) {
-    return React.cloneElement(currentChild, { next });
+    return React.cloneElement(currentChild, { goNext });
   }
 
   return currentChild;

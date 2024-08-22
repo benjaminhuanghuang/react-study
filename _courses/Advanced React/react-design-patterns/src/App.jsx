@@ -1,4 +1,4 @@
-
+import React, { useState } from 'react'
 import axios from "axios";
 
 import { SplitScreen } from './components/split-screen'
@@ -19,6 +19,9 @@ import { UserInfo } from './components/container-pattern/user-info';
 import { BookInfo } from "./components/container-pattern/book-info";
 import { DataSource } from "./components/container-pattern/data-source";
 import { DataSourceWithRenderProps } from "./components/container-pattern/data-source-with-render-props";
+//-- Controlled/Uncontrolled
+import { UncontrolledFlow } from "./components/controlled-uncontrolled/uncontrolled-flow";
+import { ControlledFlow } from "./components/controlled-uncontrolled/controlled-flow";
 
 const LeftSideComp = ({ title }) => {
   return <h2 style={{ backgroundColor: "crimson" }}>{title}</h2>;
@@ -39,7 +42,78 @@ const getDataFromLocalStorage = (key) => () => {
 
 const Message = ({ msg }) => <h1>{msg}</h1>;
 
+//
+// - For uncontrolled flow
+// const StepOne = ({ next }) => {
+//   return (
+//     <>
+//       <h1>Step #1</h1>
+//       <button onClick={next}>Next</button>
+//     </>
+//   );
+// };
+// const StepTwo = ({ next }) => {
+//   return (
+//     <>
+//       <h1>Step #2</h1>
+//       <button onClick={next}>Next</button>
+//     </>
+//   );
+// };
+// const StepThree = ({ next }) => {
+//   return (
+//     <>
+//       <h1>Step #3</h1>
+//       <button onClick={next}>Next</button>
+//     </>
+//   );
+// };
+
+const StepOne = ({ next }) => {
+  return (
+    <>
+      <h1>Step #1: Enter your name</h1>
+      <button onClick={() => next({ name: "TestName" })}>Next</button>
+    </>
+  );
+};
+const StepTwo = ({ next }) => {
+  return (
+    <>
+      <h1>Step #2: Enter your age</h1>
+      <button onClick={() => next({ age: 30 })}>Next</button>
+    </>
+  );
+};
+const StepThree = ({ next }) => {
+  return (
+    <>
+      <h1>Step #3: You qualify!</h1>
+      <button onClick={() => next({})}>Next</button>
+    </>
+  );
+};
+
+const StepFour = ({ next }) => {
+  return (
+    <>
+      <h1>Step #4: Enter your country</h1>
+      <button onClick={() => next({ country: "Poland" })}>Next</button>
+    </>
+  );
+};
+
 function App() {
+
+  const [data, setData] = useState({});
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
+
+  const next = (dataFromStep) => {
+    setData(dataFromStep);
+    setCurrentStepIndex(currentStepIndex + 1);
+  };
+
+
   return (
     <>
       <SplitScreen leftWidth={1} rightWidth={3}>
@@ -85,6 +159,19 @@ function App() {
       <DataSource getData={() => getDataFromLocalStorage("test")} resourceName={"msg"}>
         <Message />
       </DataSource>
+
+      <UncontrolledFlow>
+        <StepOne />
+        <StepTwo />
+        <StepThree />
+      </UncontrolledFlow>
+
+      <ControlledFlow currentStepIndex={currentStepIndex} onNext={next}>
+        <StepOne />
+        <StepTwo />
+        {data.age > 25 && <StepThree />}
+        <StepFour />
+      </ControlledFlow>
     </>
   )
 }
