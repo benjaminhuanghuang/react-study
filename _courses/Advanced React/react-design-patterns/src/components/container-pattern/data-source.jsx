@@ -1,16 +1,15 @@
-import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-export const ResourceLoader = ({ resourceUrl, resourceName, children }) => {
+export const DataSource = ({ getData = () => {}, resourceName, children }) => {
   const [resource, setResource] = useState(null);
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get(resourceUrl);
-      setResource(response.data);
+      const data = await getData();
+      setResource(data);
     })();
-  }, [resourceUrl]);  // re-run when resourceUrl changes
+  }, [getData]);
 
   return (
     <>
