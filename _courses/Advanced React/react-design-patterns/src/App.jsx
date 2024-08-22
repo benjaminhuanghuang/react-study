@@ -51,7 +51,7 @@ function App() {
       <RegularList items={authors} sourceName={"author"} ItemComponent={LargeAuthorListItem}></RegularList>
 
       <RegularList items={books} sourceName={"book"} ItemComponent={LargeBookListItem}></RegularList>
-     
+
       <Modal>
         <LargeBookListItem book={books[0]} />
       </Modal>
@@ -64,11 +64,11 @@ function App() {
         <UserInfo></UserInfo>
       </UserLoader>
 
-      <ResourceLoader resouceUrl={"api/users/1"} resourceName={"user"}>
+      <ResourceLoader resourceUrl={"api/users/1"} resourceName={"user"}>
         <UserInfo />
       </ResourceLoader>
 
-      <ResourceLoader resouceUrl={"api/books/1"} resourceName={"book"}>
+      <ResourceLoader resourceUrl={"api/books/1"} resourceName={"book"}>
         <BookInfo />
       </ResourceLoader>
 
@@ -78,11 +78,11 @@ function App() {
       </DataSource>
 
       <DataSourceWithRenderProps
-        getData={() => fetchData("/users/1")}
+        getData={() => fetchData("api/users/1")}
         render={(resource) => <UserInfo user={resource} />}
       ></DataSourceWithRenderProps>
 
-    <DataSource getData={() => getDataFromLocalStorage("test")} resourceName={"msg"}>
+      <DataSource getData={() => getDataFromLocalStorage("test")} resourceName={"msg"}>
         <Message />
       </DataSource>
     </>
