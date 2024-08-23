@@ -19,7 +19,7 @@ export const includeUpdatableUser = (Component, userId) => {
     };
 
     const userPostHandler = async () => {
-      const response = await axios.post(`/users/${userId}`, {
+      const response = await axios.post(`api/users/${userId}`, {
         user: updatableUser,
       });
       setUser(response.data);
