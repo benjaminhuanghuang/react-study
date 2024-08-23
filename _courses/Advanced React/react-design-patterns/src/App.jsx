@@ -22,6 +22,8 @@ import { DataSourceWithRenderProps } from "./components/container-pattern/data-s
 //-- Controlled/Uncontrolled
 import { UncontrolledFlow } from "./components/controlled-uncontrolled/uncontrolled-flow";
 import { ControlledFlow } from "./components/controlled-uncontrolled/controlled-flow";
+//-- HOC
+import { checkProps } from "./components/hoc/check-props";
 
 const LeftSideComp = ({ title }) => {
   return <h2 style={{ backgroundColor: "crimson" }}>{title}</h2>;
@@ -103,6 +105,8 @@ const StepFour = ({ next }) => {
   );
 };
 
+const UserInfoWrapper = checkProps(UserInfo);
+
 function App() {
 
   const [data, setData] = useState({});
@@ -172,6 +176,8 @@ function App() {
         {data.age > 25 && <StepThree />}
         <StepFour />
       </ControlledFlow>
+
+      <UserInfoWrapper propA="test1" blabla={{ a: 1, age: 23 }} />
     </>
   )
 }

@@ -1,6 +1,8 @@
 # Higher Order Components
 A component that returns another component
-- share component
+
+Purpose
+- share logic
 - Add extra function to existing component without modifying their code.
 
 
