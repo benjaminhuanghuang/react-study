@@ -22,6 +22,9 @@ Search icon on flaticon.com
 
 ## Server
 ```bash
+npm init -y
+
+npm i openai dotenv express cors
 
 ```
 
