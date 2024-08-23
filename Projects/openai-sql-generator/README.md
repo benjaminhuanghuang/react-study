@@ -9,12 +9,12 @@ https://github.com/alejandro-ao/openai-sql-generator
 ## Client
 ```bash
 npm create vite@latest client
-
-
 ```
+
 copy index.module.css from
 https://github.com/alejandro-ao/openai-sql-generator/blob/main/client/src/styles.module.css
-
+or
+https://github.com/openai/openai-quickstart-node/blob/master/pages/index.module.css
 
 Search icon on flaticon.com
 
@@ -28,4 +28,9 @@ Search icon on flaticon.com
 ## Open AI
 search "open ai quickstart"
 https://platform.openai.com/docs/quickstart?context=curl
+
+
+open platform.openai.com
+
+Create new API key
 

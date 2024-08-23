@@ -9,21 +9,21 @@ function App() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // const query = await generateQuery();
-    // setSqlQuery(query);
+    const query = await generateQuery();
+    setSqlQuery(query);
   };
 
   const generateQuery = async () => {
-    // const response = await fetch("http://localhost:3002/generate", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ queryDescription: userPrompt }),
-    // });
+    const response = await fetch("http://localhost:3002/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ queryDescription: userPrompt }),
+    });
 
-    // const data = await response.json();
-    // return data.sqlQuery.trim();
+    const data = await response.json();
+    return data.sqlQuery.trim();
   };
 
 
