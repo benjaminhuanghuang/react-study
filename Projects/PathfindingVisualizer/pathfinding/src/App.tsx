@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { PathfindingProvider } from "./context/PathfindingContext"
+import { SpeedProvider } from "./context/SpeedContext"
+import { TileProvider } from "./context/TileContext"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-     
-    </>
+    <PathfindingProvider>
+      <TileProvider>
+        <SpeedProvider>
+          <div className="h-screen w-screen flex flex-col bg-[#131416]">
+            
+          </div>
+        </SpeedProvider>
+      </TileProvider>
+    </PathfindingProvider>
   )
 }
 
