@@ -16,5 +16,7 @@ npx create-react-app google-calendar-react-wailwind
 
 npm i -D tailwindcss
 npx tailwindcss init
+
+npm i dayjs @tailwindcss/forms
 ```
 
