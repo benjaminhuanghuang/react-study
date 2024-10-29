@@ -1,6 +1,7 @@
 // import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/NavBar";
+import NavbarMultiLevel from "./components/NavBarMultiLevel";
 import Home from "./views/Home";
 import About from "./views/About";
 import Contact from "./views/Contact";
@@ -11,6 +12,8 @@ function App() {
   return (
     <div>
       <Navbar />
+
+      <NavbarMultiLevel/>
 
       <Routes>
         <Route path="/" element={<Home />} />
