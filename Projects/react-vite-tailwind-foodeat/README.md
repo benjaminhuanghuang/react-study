@@ -8,6 +8,7 @@ https://github.com/dilshad-ahmed/foodeat
 ```sh
 npm create vite
 
+npm i react-icons
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
