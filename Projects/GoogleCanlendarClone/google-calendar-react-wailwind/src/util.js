@@ -1,5 +1,8 @@
 import dayjs from "dayjs";
 
+/*
+  Returns the days as a matrix for the specified month
+*/
 export function getMonth(month = dayjs().month()) {
   month = Math.floor(month);
   const year = dayjs().year();

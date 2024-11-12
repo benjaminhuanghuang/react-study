@@ -5,6 +5,7 @@ import GlobalContext from "../context/GlobalContext";
 
 export default function CalendarHeader() {
   const { monthIndex, setMonthIndex } = useContext(GlobalContext);
+  
   function handlePrevMonth() {
     setMonthIndex(monthIndex - 1);
   }
