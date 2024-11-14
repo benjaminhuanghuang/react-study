@@ -27,6 +27,7 @@ export default function Day({ day, rowIdx }) {
   return (
     <div className="border border-gray-200 flex flex-col">
       <header className="flex flex-col items-center">
+        {/* only show weekday on first row */}
         {rowIdx === 0 && (
           <p className="text-sm mt-1">
             {day.format("ddd").toUpperCase()}
