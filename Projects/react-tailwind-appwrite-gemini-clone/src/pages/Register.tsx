@@ -1,11 +1,18 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
+import PageTitle from '../components/PageTitle';
 
 function Register() {
   return (
-    <div>
-      Register
-    </div>
-  )
+    <>
+      <PageTitle title='Create an account' />
+      <div className=''>
+        <div className=''>
+          <Link to='/'>
+          </Link>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Register
+export default Register;

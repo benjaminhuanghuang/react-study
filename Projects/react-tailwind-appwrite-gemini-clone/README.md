@@ -51,4 +51,6 @@ Add pics from https://drive.google.com/file/d/1K0o82z-f8Zcb6A-2MMal_NUs_O6qlvmz/
 
 ## Setup react-helmet to change meta title and description 26:50
 ```sh
+npm i react-helmet
+npm i --save-dev @types/react-helmet
 ```
