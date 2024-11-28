@@ -105,7 +105,7 @@ function Register() {
               Already have an account?
               <Link
                 to='/login'
-                className='link inline-block ms-1 text-light-onSurface dark:text-dark-onSurface'
+                className='link inline-block text-labelLarge ms-1 text-light-onSurface dark:text-dark-onSurface'
               >
                 Sign In
               </Link>
