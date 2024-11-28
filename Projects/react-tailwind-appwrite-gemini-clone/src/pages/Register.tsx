@@ -1,11 +1,33 @@
-import { Link, Form } from 'react-router-dom';
+// Node modules
+import { useEffect } from 'react';
+import { Link, Form, useNavigation, useActionData } from 'react-router-dom';
+// Custom modules
+import { logoDark, logoLight, banner } from '../assets/assets';
+// Components
 import PageTitle from '../components/PageTitle';
 import TextField from '../components/TextField';
 import Button from '../components/Button';
-//
-import { logoDark, logoLight, banner } from '../assets/assets';
+import { CircleProgress, LinearProgress } from '@/components/Progress';
+import { useSnackbar } from '@/hooks/useSnackbar';
 
 function Register() {
+  // get navigation status
+  const navigation = useNavigation();
+  // Get error data from submission
+  const error = useActionData();
+
+  const { showSnackbar } = useSnackbar();
+
+  useEffect(() => {
+    //show error message
+    if (error?.message) {
+      showSnackbar({
+        message: error.message,
+        type: 'error',
+      });
+    }
+  }, [error, showSnackbar]);
+
   return (
     <>
       <PageTitle title='Create an account' />
@@ -66,7 +88,15 @@ function Register() {
                 placeholder='Enter your password'
                 required={true}
               />
-              <Button type='submit'> Create account </Button>
+              <Button
+                type='submit'
+                disabled={navigation.state === 'submitting'}
+              >
+                <CircleProgress size='small' />
+                {navigation.state === 'submitting'
+                  ? 'Submitting...'
+                  : 'Create account'}
+              </Button>
             </Form>
 
             <p className='text-bodyMedium text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant text-center mt-4'>
@@ -97,6 +127,7 @@ function Register() {
           </p>
         </div>
       </div>
+      <LinearProgress classes='absolute top-0 left-0 right'/>
     </>
   );
 }

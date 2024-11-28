@@ -29,6 +29,7 @@ const TextField = ({
       </label>
       <input
         id={name}
+        name={name}
         placeholder={placeholder}
         className={`text-field ${fieldClasses}`}
         {...rest}

@@ -6,6 +6,7 @@
  * BASE resetting default browser styles or defining typography defaults
  */
 @layer base {
+
   a,
   img,
   button {
@@ -66,7 +67,7 @@
   }
 
   .label-text {
-    @apply absolute text-labelLarge top-[18px] left-2 text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant bg-light-background dark:bg-dark-background px-2 origin-[center_left] pointer-events-none select-none transition-[color,transform] duration-short4 ease-standard;
+    @apply absolute text-labelLarge top-[18px] left-2 text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant bg-light-background dark:bg-dark-background px-2 origin-[center_left] pointer-events-none select-none transition-[color, transform] duration-short4 ease-standard;
   }
 
   .text-field-wrapper:hover .label-text {
@@ -102,7 +103,7 @@
   @media(prefers-color-scheme: dark) {
     .btn.filled.primary {
       --state-layer-bg: theme('colors.dark.onPrimary');
-    } 
+    }
   }
 
   .btn.filled.disabled {
@@ -117,21 +118,14 @@
   }
 
   .state-layer {
-    @apply absolute inset-0 bg-[--state-layer-bg]
-    opacity-0
-    transition-opacity
-    duration-short3
-    ease-standard
-    pointer-events-none
-    select-none
-    -z-10;
+    @apply absolute inset-0 bg-[--state-layer-bg] opacity-0 transition-opacity duration-short3 ease-standard pointer-events-none select-none -z-10;
   }
 
-  :has(> .state-layer):hover > .state-layer {
+  :has(> .state-layer):hover>.state-layer {
     @apply opacity-[0.08];
   }
 
-  :has(> .state-layer):where(:focus, :focus-visible, :focus-within) > .state-layer {
+  :has(> .state-layer):where(:focus, :focus-visible, :focus-within)>.state-layer {
     @apply opacity-[0.1];
   }
 
@@ -140,14 +134,36 @@
   */
 
   .link {
-    @apply transition-colors
-    duration-short3
-    ease-standard
-
-    hover:text-light-primary
-    dark:hover:text-dark-primary
-    hover:underline
+    @apply transition-colors duration-short3 ease-standard hover:text-light-primary dark:hover:text-dark-primary hover:underline
   }
+
+  /**
+  * Progress
+  */
+  .circular-progress {
+    @apply border-4 border-current dark:border-current border-r-transparent dark:border-r-transparent w-12 h-12 rounded-full animate-spin;
+  }
+
+  .circular-progress.small {
+    @apply border-[3px] w-5 h-5;
+  }
+
+  /**
+  * Snackbar
+  */
+  .snackbar {
+    @apply fixed bottom-4 left-4 right-4 bg-light-inverseSurface dark:bg-dark-inverseSurface text-light-inverseOnSurface dark:text-dark-inverseOnSurface text-bodyMedium shadow-elevation3 rounded-extraSmall min-h-12 max-w-[60ch] min-w-[36ch] px-4 py-[14px] origin-bottom z-40
+    /* Response for small screen */
+    sm:left-6
+    sm:right-auto
+    sm:bottom-6
+    sm:w-max
+  }
+  .snackbar.error {
+    @apply bg-light-errorContainer text-light-onErrorContainer
+  }
+
+  
 }
 
 /*
@@ -155,9 +171,7 @@
   */
 @layer utilities {
   .img-box {
-    @apply bg-light-surfaceContainerHighest
-    dark:bg-dark-surfaceContainerHighest
-    overflow-hidden
+    @apply bg-light-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest overflow-hidden
   }
 
   .img-cover {
