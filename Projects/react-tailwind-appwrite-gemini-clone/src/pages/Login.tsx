@@ -1,3 +1,4 @@
+
 // Node modules
 import { useEffect } from 'react';
 import { Link, Form, useNavigation, useActionData } from 'react-router-dom';
@@ -12,7 +13,7 @@ import Button from '../components/Button';
 import { CircleProgress, LinearProgress } from '@/components/Progress';
 import { useSnackbar } from '@/hooks/useSnackbar';
 
-function Register() {
+function Login() {
   // get navigation status
   const navigation = useNavigation();
   // Get error data from submission
@@ -138,4 +139,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Login;
