@@ -1,6 +1,7 @@
 // Node modules
 import { ReactNode } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 interface ButtonProps {
   classes?: string;
@@ -44,7 +45,7 @@ const IconButton = ({
   ...rest
 }: IconButtonProps) => {
   return (
-    <button
+    <motion.button
       className={`icon-btn ${size} ${classes}`}
       {...rest}
     >
@@ -53,7 +54,7 @@ const IconButton = ({
       )}
       <div className='state-layer'></div>
       {children}
-    </button>
+    </motion.button>
   );
 };
 interface ExtendedFabProps {
@@ -63,15 +64,23 @@ interface ExtendedFabProps {
   [key: string]: any;
 }
 
-const ExtendedFab=({href, text, classes='', ...rest}: ExtendedFabProps)=>{
+const ExtendedFab = ({
+  href,
+  text,
+  classes = '',
+  ...rest
+}: ExtendedFabProps) => {
   return (
-    <Link to={href} className={`extended-fab ${classes}`} {...rest}>
-      <span className="material-symbols-rounded">add</span>
-      <span className="truncate">{}</span>
-      <div className="state-layer"></div>
+    <Link
+      to={href}
+      className={`extended-fab ${classes}`}
+      {...rest}
+    >
+      <span className='material-symbols-rounded'>add</span>
+      <span className='truncate'>{text}</span>
+      <div className='state-layer'></div>
     </Link>
-  )
-}
-
+  );
+};
 
 export { Button, IconButton, ExtendedFab };

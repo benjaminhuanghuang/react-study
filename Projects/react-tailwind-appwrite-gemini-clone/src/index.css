@@ -266,6 +266,113 @@
   .overlay.active {
     @apply bg-black/40 visible
   }
+
+  /**
+  * Extended FAB
+  */
+  .extended-fab{
+    --state-layer-bg: theme('colors.light.onPrimaryContainer');
+    @apply bg-light-primaryContainer
+    dark:bg-dark-primaryContainer
+    text-light-onPrimaryContainer
+    dark:text-dark-onPrimaryContainer
+    text-labelLarge
+    max-w-max
+    flex
+    items-center
+    gap-2
+    h-[56px]
+    ps-3
+    pe-4
+    rounded-large
+    shadow-elevation1
+    transition-shadow
+    duration-short3
+    ease-standard
+    hover:shadow-elevation2
+    focus:shadow-elevation1
+  }
+  @media (prefers-color-scheme: dark) {
+    .extended-fab {
+      --state-layer-bg: theme('colors.dark.onPrimaryContainer');
+    }
+  }
+  .extended-fab[disable] {
+    @apply bg-light-onSurface/[0.12]
+    dark:bg-dark-onSurface/[0.12]
+    text-light-onSurface/[0.38]
+    dark:text-dark-onSurface/[0.38]
+    shadow-none
+    pointer-events-none
+  }
+  
+  /**
+  * Navlink
+  */
+  .nav-link {
+    --state-layer-bg: theme('colors.light.onSurfaceVariant');
+    @apply flex items-center gap-3 text-labelLarge text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant
+    h-9 rounded-full ps-4 pe-10;
+  }
+  .nav-link.active {
+    --state-layer-bg: theme('colors.light.onSecondaryContainer');
+    @apply bg-light-secondaryContainer
+     dark:bg-dark-secondaryContainer
+     text-light-onSecondaryContainer
+      dark:text-dark-onSecondaryContainer;
+  }
+  @media (prefers-color-scheme: dark) {
+    .nav-link {
+      --state-layer-bg: theme('colors.dark.onSurfaceVariant');
+    }
+    .nav-link.active {
+      --state-layer-bg: theme('colors.dark.onSecondaryContainer');
+    }
+  }
+
+  /**
+  * Prompt field
+  */
+  .prompt-field-container {
+    --state-layer-bg: theme('colors.dark.onSurfaceVariant');
+    @apply bg-light-surfaceVariant
+    dark:bg-dark-surfaceVariant
+    min-h-16
+    rounded-full
+    flex
+    items-end
+    flex-wrap
+    p-2
+    cursor-text
+  }
+  @media (prefers-color-scheme: dark) {
+    .prompt-field-container {
+      --state-layer-bg: theme('colors.dark.onSurfaceVariant');
+    }
+  }
+
+  .prompt-field {
+    @apply text-light-onSurface
+    dark:text-dark-onSurface
+    text-bodyLarge
+    relative
+    outline-none
+    grow
+    mx-4
+    py-3
+    max-h-[230px]
+    overflow-y-auto
+    whitespace-pre-wrap
+    /* after*/
+    after:content-[attr(data-placeholder)]
+    after:text-light-onSurfaceVariant/90
+    after:dark:text-dark-onSurfaceVariant/90
+    after:absolute
+    after:left-0
+    after:top-1/2
+    after:-translate-y-1/2
+    after:pointer-events-none
+  }
 }
 
 /*

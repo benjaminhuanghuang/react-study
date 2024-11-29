@@ -16,7 +16,10 @@ import { LinearProgress } from './Progress';
 import useToggle from '@/hooks/useToggle';
 import logout from '@/utils/logout';
 
-function TopAppBar() {
+interface TopAppBarProps {
+  toggleSidebar: () => void;
+}
+function TopAppBar({toggleSidebar}: TopAppBarProps) {
   // Provides navigation status (loading, idle, submitting, etc)
   const navigation = useNavigation();
   const navigate = useNavigate();
@@ -34,6 +37,7 @@ function TopAppBar() {
           size='md'
           title='Menu'
           classes='lg:hidden'
+          onClick={toggleSidebar} 
         />
         <Logo classes='lg:hidden' />
       </div>
