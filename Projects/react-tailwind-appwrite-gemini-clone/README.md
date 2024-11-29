@@ -74,8 +74,15 @@ Settings
 
 
 ## Framer motion  1:45
+
 ```
 npm i framer-motion
 ```
 
 ## Login 1:59
+
+## Reset Link
+
+## Reset Password
+
+## App 2:29
