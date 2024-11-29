@@ -1,5 +1,6 @@
-import { span } from 'framer-motion/client';
+// Node modules
 import { ReactNode } from 'react';
+import {Link} from 'react-router-dom';
 
 interface ButtonProps {
   classes?: string;
@@ -55,5 +56,22 @@ const IconButton = ({
     </button>
   );
 };
+interface ExtendedFabProps {
+  href: string;
+  text: string;
+  classes?: string;
+  [key: string]: any;
+}
 
-export { Button, IconButton };
+const ExtendedFab=({href, text, classes='', ...rest}: ExtendedFabProps)=>{
+  return (
+    <Link to={href} className={`extended-fab ${classes}`} {...rest}>
+      <span className="material-symbols-rounded">add</span>
+      <span className="truncate">{}</span>
+      <div className="state-layer"></div>
+    </Link>
+  )
+}
+
+
+export { Button, IconButton, ExtendedFab };

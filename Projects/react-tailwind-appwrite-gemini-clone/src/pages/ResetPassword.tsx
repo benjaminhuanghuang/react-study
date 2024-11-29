@@ -4,7 +4,7 @@ import { Link, Form, useNavigation, useActionData } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Custom modules
-import { logoDark, logoLight, banner } from '../assets/assets';
+import { banner } from '../assets/assets';
 // Components
 import PageTitle from '../components/PageTitle';
 import TextField from '../components/TextField';
