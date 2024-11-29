@@ -1,6 +1,7 @@
 // Components
 import PageTitle from '@/components/PageTitle';
-
+import TopAppBar
+ from './components/TopAppBar';
 function App() {
   return (
     <>
@@ -10,7 +11,8 @@ function App() {
 
         <div className=''>
           {/* Top app bar */}
-
+          <TopAppBar />
+          
           {/* Main content */}
           <div className=''>
             <div className=''></div>

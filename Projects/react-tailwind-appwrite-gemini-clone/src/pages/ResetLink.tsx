@@ -9,10 +9,9 @@ import { logoDark, logoLight, banner } from '../assets/assets';
 // Components
 import PageTitle from '../components/PageTitle';
 import TextField from '../components/TextField';
-import Button from '../components/Button';
+import {Button}  from '../components/Button';
 import { CircleProgress, LinearProgress } from '@/components/Progress';
 import { useSnackbar } from '@/hooks/useSnackbar';
-import { a, i } from 'framer-motion/client';
 
 function ResetLink() {
   // get navigation status

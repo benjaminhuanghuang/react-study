@@ -1,4 +1,3 @@
-
 // Node modules
 import { useEffect } from 'react';
 import { Link, Form, useNavigation, useActionData } from 'react-router-dom';
@@ -9,7 +8,7 @@ import { logoDark, logoLight, banner } from '../assets/assets';
 // Components
 import PageTitle from '../components/PageTitle';
 import TextField from '../components/TextField';
-import Button from '../components/Button';
+import { Button } from '../components/Button';
 import { CircleProgress, LinearProgress } from '@/components/Progress';
 import { useSnackbar } from '@/hooks/useSnackbar';
 
@@ -60,7 +59,8 @@ function ResetPassword() {
               Set a new password
             </h2>
             <p className='text-bodyLarge text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant mt-1 mb-5 text-center px-2'>
-             Please choose a new password to continue. Must be at least 8 characters long.
+              Please choose a new password to continue. Must be at least 8
+              characters long.
             </p>
             <Form
               method='POST'
@@ -74,20 +74,25 @@ function ResetPassword() {
                 required={true}
                 autoFocus={true}
               />
-              <div className="text-right">
-                <Link to='/reset-link' className='link text-labelLarge inline-block'>Forget password?</Link>
+              <div className='text-right'>
+                <Link
+                  to='/reset-link'
+                  className='link text-labelLarge inline-block'
+                >
+                  Forget password?
+                </Link>
               </div>
               <Button
                 type='submit'
                 disabled={navigation.state === 'submitting'}
               >
-              
-                {navigation.state === 'submitting'
-                  ? <CircleProgress size='small' />
-                  : 'Reset password'}
+                {navigation.state === 'submitting' ? (
+                  <CircleProgress size='small' />
+                ) : (
+                  'Reset password'
+                )}
               </Button>
             </Form>
-  
           </div>
           <p className='mt-auto mx-auto text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant text-bodyMedium lg:mx-0'>
             &copy; 2021 Phoenix. All rights reserved.
