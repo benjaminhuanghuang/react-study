@@ -1,5 +1,5 @@
 // Node modules
-import { Link, useNavigation } from 'react-router-dom';
+import { Link, useNavigation, useNavigate, useLoaderData } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Components
@@ -8,6 +8,9 @@ import Avatar from './Avatar';
 import Menu from './Menu';
 import MenuItem from './MenuItem';
 import { LinearProgress } from './Progress';
+import useToggle from '@/hooks/useToggle';
+import logout from '@/utils/logout';
+
 
 // Assets
 import { logoLight, logoDark } from '@/assets/assets';
@@ -15,6 +18,11 @@ import { logoLight, logoDark } from '@/assets/assets';
 function TopAppBar() {
   // Provides navigation status (loading, idle, submitting, etc)
   const navigation = useNavigation();
+  const navigate = useNavigate();
+  const {user} = useLoaderData();
+
+  const [showMenu, setShowMenu] = useToggle();
+   
   const isNormalLoad = navigation.state === 'loading' && !navigation.formData;
 
   return (
@@ -47,11 +55,11 @@ function TopAppBar() {
         </Link>
       </div>
       <div className='menu-wrapper'>
-        <IconButton>
-          <Avatar name='codewithsadee' />
+        <IconButton onClick={setShowMenu}>
+          <Avatar name={user.name} />
         </IconButton>
-        <Menu>
-          <MenuItem labelText='Log out'></MenuItem>
+        <Menu classes={showMenu?'active':''}>
+          <MenuItem labelText='Log out' onClick={()=>logout(navigate)}></MenuItem>
         </Menu>
       </div>
       <AnimatePresence>{isNormalLoad && <LinearProgress />}</AnimatePresence>
