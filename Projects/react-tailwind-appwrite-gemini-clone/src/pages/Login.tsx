@@ -1,15 +1,15 @@
-
 // Node modules
 import { useEffect } from 'react';
 import { Link, Form, useNavigation, useActionData } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Custom modules
-import { logoDark, logoLight, banner } from '../assets/assets';
+import { banner } from '../assets/assets';
 // Components
 import PageTitle from '../components/PageTitle';
 import TextField from '../components/TextField';
-import {Button} from '../components/Button';
+import Logo from '@/components/Logo';
+import { Button } from '../components/Button';
 import { CircleProgress, LinearProgress } from '@/components/Progress';
 import { useSnackbar } from '@/hooks/useSnackbar';
 
@@ -36,25 +36,7 @@ function Login() {
       <PageTitle title='Create an account' />
       <div className='relative w-screen h-dvh p-2 grid grid-cols-1 lg:grid-cols-[1fr,1.2fr] lg:gap-2'>
         <div className='flex flex-col p-4'>
-          <Link
-            to='/'
-            className='max-w-max mb-auto mx-auto lg:mx-0'
-          >
-            <img
-              src={logoLight}
-              alt='phoenix logo'
-              width={133}
-              height={24}
-              className='dark:hidden'
-            />
-            <img
-              src={logoDark}
-              alt='phoenix logo'
-              width={133}
-              height={24}
-              className='hidden dark:block'
-            />
-          </Link>
+          <Logo classes='mb-auto mx-auto lg:mx-0' />
           <div className='flex flex-col gap-2 max-w-[480px] w-full mx-auto'>
             <h2 className='text-displaySmall font-semibold text-light-onBackground dark:text-dark-onBackground text-center'>
               Welcome Back to Phoenix
@@ -81,17 +63,23 @@ function Login() {
                 placeholder='Enter your password'
                 required={true}
               />
-              <div className="text-right">
-                <Link to='/reset-link' className='link text-labelLarge inline-block'>Forget password?</Link>
+              <div className='text-right'>
+                <Link
+                  to='/reset-link'
+                  className='link text-labelLarge inline-block'
+                >
+                  Forget password?
+                </Link>
               </div>
               <Button
                 type='submit'
                 disabled={navigation.state === 'submitting'}
               >
-              
-                {navigation.state === 'submitting'
-                  ? <CircleProgress size='small' />
-                  : 'Sign In'}
+                {navigation.state === 'submitting' ? (
+                  <CircleProgress size='small' />
+                ) : (
+                  'Sign In'
+                )}
               </Button>
             </Form>
 
@@ -101,7 +89,7 @@ function Login() {
                 to='/register'
                 className='link text-labelLarge inline-block ms-1 text-light-onSurface dark:text-dark-onSurface'
               >
-              Create an account
+                Create an account
               </Link>
             </p>
           </div>

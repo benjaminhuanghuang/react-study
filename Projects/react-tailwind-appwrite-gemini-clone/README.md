@@ -86,3 +86,7 @@ npm i framer-motion
 ## Reset Password
 
 ## App 2:29
+
+## Sidebar 3:06
+
+
