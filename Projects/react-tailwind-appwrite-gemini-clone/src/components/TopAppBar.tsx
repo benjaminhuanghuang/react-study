@@ -1,9 +1,5 @@
 // Node modules
-import {
-  useNavigation,
-  useNavigate,
-  useLoaderData,
-} from 'react-router-dom';
+import { useNavigation, useNavigate, useLoaderData } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Components
@@ -19,7 +15,7 @@ import logout from '@/utils/logout';
 interface TopAppBarProps {
   toggleSidebar: () => void;
 }
-function TopAppBar({toggleSidebar}: TopAppBarProps) {
+function TopAppBar({ toggleSidebar }: TopAppBarProps) {
   // Provides navigation status (loading, idle, submitting, etc)
   const navigation = useNavigation();
   const navigate = useNavigate();
@@ -37,7 +33,7 @@ function TopAppBar({toggleSidebar}: TopAppBarProps) {
           size='md'
           title='Menu'
           classes='lg:hidden'
-          onClick={toggleSidebar} 
+          onClick={toggleSidebar}
         />
         <Logo classes='lg:hidden' />
       </div>
@@ -52,7 +48,11 @@ function TopAppBar({toggleSidebar}: TopAppBarProps) {
           ></MenuItem>
         </Menu>
       </div>
-      <AnimatePresence>{isNormalLoad && <LinearProgress />}</AnimatePresence>
+      <AnimatePresence>
+        {isNormalLoad && (
+          <LinearProgress classes='absolute top-full left-0 right-0 z-10' />
+        )}
+      </AnimatePresence>
     </header>
   );
 }

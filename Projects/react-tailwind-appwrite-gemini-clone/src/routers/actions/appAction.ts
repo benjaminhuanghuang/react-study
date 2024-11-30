@@ -2,6 +2,7 @@
 import { getAiResponse, getConversationTitle } from '@/api/googleAI';
 import { account, database } from '@/lib/appwrite';
 import generateID from '@/utils/genertateID';
+import { redirect } from 'react-router-dom';
 
 const userPromptAction = async (formData: any) => {
   const userPrompt = formData.get('user_prompt') as string;
@@ -40,6 +41,8 @@ const userPromptAction = async (formData: any) => {
   } catch (error) {
     console.log(`Error in creating chat: ${error}`);
   }
+
+  return redirect(`/${conversation!.$id}`);
 };
 
 const appAction = async ({ request }: any) => {
