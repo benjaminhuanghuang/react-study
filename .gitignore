@@ -5,3 +5,4 @@ bundle.js.*
 *.lock
 *-lock.js
 *-lock.json
+.env

@@ -55,6 +55,10 @@ function PromptField() {
     submit({
       use_prompt: inputValue,
       request_type: 'user_prompt'
+    }, {
+      method: 'POST',
+      encType: 'application/x-www-form-urlencoded',
+      action:'/',
     });
 
     inputField.current!.innerText = '';

@@ -18,9 +18,10 @@ import registerAction from './actions/registerAction';
 import loginAction from './actions/loginAction';
 import resetLinkAction from './actions/resetLinkAction';
 import resetPasswordAction from './actions/resetPasswordAction';
+import appAction from './actions/appAction';
 
 const Router = createBrowserRouter([
-  { path: '/', element: <App />, loader: appLoader },
+  { path: '/', element: <App />, loader: appLoader, action: appAction },
   {
     path: '/register',
     element: <Register />,

@@ -90,3 +90,14 @@ npm i framer-motion
 ## Sidebar 3:06
 
 
+
+
+## Gimini API 4:12
+https://ai.google.dev/
+
+Get API key
+
+Put API key to .env file
+install @google/generative-ai
+
+## AppWrite DB  4:18
