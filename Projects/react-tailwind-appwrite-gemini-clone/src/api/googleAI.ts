@@ -28,4 +28,4 @@ const getAiResponse = async (userPrompt: string, chats = []) => {
   }
 };
 
-export { getConversationTitle };
+export { getConversationTitle, getAiResponse };
