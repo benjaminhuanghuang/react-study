@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 // Components
 import Logo from './Logo';
 import { IconButton, ExtendedFab } from './Button';
-import { it } from 'node:test';
 
 interface SidebarProps {
   isSidebarOpen: boolean;
@@ -12,7 +11,7 @@ interface SidebarProps {
 
 function Sidebar({ isSidebarOpen, toggleSidebar }: SidebarProps) {
   const {
-    conversation: { documents: conversationData },
+    conversations: { documents: conversationData },
   } = useLoaderData() || {};
 
   return (

@@ -1,10 +1,9 @@
 // Node modules
 import { useCallback, useRef, useState } from 'react';
-import { useSubmit, useNavigation } from 'react-router-dom';
+import { useSubmit, useNavigation, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 // Components
 import { IconButton } from './Button';
-import { input } from 'framer-motion/client';
 
 function PromptField() {
   const inputField = useRef<HTMLDivElement>(null);
@@ -15,6 +14,7 @@ function PromptField() {
 
   const submit = useSubmit();
   const navigation = useNavigation();
+  const {conversationId} = useParams();
 
   const handleInputChange = useCallback(() => {
     if (inputField.current?.innerText === '\n') {
@@ -58,12 +58,12 @@ function PromptField() {
     }, {
       method: 'POST',
       encType: 'application/x-www-form-urlencoded',
-      action:'/',
+      action: `/${conversationId}||''`,
     });
 
     inputField.current!.innerText = '';
     handleInputChange();
-  }, [handleInputChange, inputValue, navigation.state]);
+  }, [handleInputChange, inputValue, navigation.state, submit, conversationId]);
 
   // Define the motion variant
   const promptFieldVariant = {

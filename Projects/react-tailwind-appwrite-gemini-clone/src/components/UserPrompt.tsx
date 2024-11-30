@@ -25,7 +25,7 @@ const UserPrompt = ({ text }: UserPromptProps) => {
   }, [textBoxRef]);
   return (
     <div
-      className='grid grid-cols-1 item-center gap-1 py-4 
+      className='grid grid-cols-1 item-start gap-1 py-4 
        md:grid-cols-[max-content,minmax(0,1fr),max-content]
        md:gap-5'
     >

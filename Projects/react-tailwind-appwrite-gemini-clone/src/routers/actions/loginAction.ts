@@ -1,7 +1,6 @@
 import { redirect } from 'react-router-dom';
 // Custom modules
 import { account } from '../../lib/appwrite';
-import { m } from 'framer-motion';
 
 const loginAction = async ({ request }: any) => {
   const formData = await request.formData();

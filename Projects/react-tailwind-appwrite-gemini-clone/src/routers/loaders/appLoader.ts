@@ -4,7 +4,7 @@ import { Query } from 'appwrite';
 import { account, database } from '../../lib/appwrite';
 
 const appLoader = async () => {
-  const data: { user?: any; conversation?: any } = {};
+  const data: { user?: any; conversations?: any } = {};
   try {
     data.user = await account.get();
   } catch (error) {
@@ -13,7 +13,7 @@ const appLoader = async () => {
   }
 
   try {
-    data.conversation = await database.listDocuments(
+    data.conversations = await database.listDocuments(
       import.meta.env.VITE_APPWRITE_DATABASE_ID,
       'conversations',
       [

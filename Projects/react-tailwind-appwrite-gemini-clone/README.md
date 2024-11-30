@@ -105,3 +105,6 @@ install @google/generative-ai
 
 ## React-markdown 5:01
 
+```sh
+npm i react-markdown remark-gfm
+```

@@ -1,6 +1,19 @@
 import model from '@/lib/googleAI';
 
-const getConversationTitle = async (userPrompt: string) => {
+const getConversationTitle = async (userPrompt: string, chats = []) => {
+  const history = [];
+  chats.forEach(({ user_prompt, ai_response }) => {
+    history.push(
+      {
+        role: 'user',
+        parts: [{ text: user_prompt }],
+      },
+      {
+        role: 'model',
+        parts: [{ text: ai_response }],
+      },
+    );
+  });
   try {
     const result = await model.generateContent(`
         Given a user prompt, generate a concise and informative title that accurately 

@@ -1,5 +1,11 @@
 // Node modules
-import { useNavigation, useNavigate, useLoaderData } from 'react-router-dom';
+import {
+  useNavigation,
+  useNavigate,
+  useLoaderData,
+  useParams,
+  useSubmit,
+} from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Components
@@ -11,6 +17,7 @@ import Logo from './Logo';
 import { LinearProgress } from './Progress';
 import useToggle from '@/hooks/useToggle';
 import logout from '@/utils/logout';
+import deleteConversation from '@/utils/deleteConversation';
 
 interface TopAppBarProps {
   toggleSidebar: () => void;
@@ -19,7 +26,9 @@ function TopAppBar({ toggleSidebar }: TopAppBarProps) {
   // Provides navigation status (loading, idle, submitting, etc)
   const navigation = useNavigation();
   const navigate = useNavigate();
-  const { user } = useLoaderData();
+  const { conversations, user } = useLoaderData();
+  const params = useParams();
+  const submit = useSubmit();
 
   const [showMenu, setShowMenu] = useToggle();
 
@@ -37,6 +46,24 @@ function TopAppBar({ toggleSidebar }: TopAppBarProps) {
         />
         <Logo classes='lg:hidden' />
       </div>
+
+      {params.conversationId && (
+        <IconButton
+          icon='delete'
+          classes='ms-auto me-1 lg:hidden'
+          onClick={() => {
+            const { title } = conversations.documents.find(
+              ({ $id }: any) => $id === params.conversationId,
+            );
+            deleteConversation({
+              id: params.conversationId,
+              title,
+              submit
+            });
+          }}
+        ></IconButton>
+      )}
+
       <div className='menu-wrapper'>
         <IconButton onClick={setShowMenu}>
           <Avatar name={user.name} />

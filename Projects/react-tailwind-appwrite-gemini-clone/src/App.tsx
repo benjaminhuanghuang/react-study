@@ -1,6 +1,6 @@
 // Node modules
 import { motion } from 'framer-motion';
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useParams, useNavigation } from 'react-router-dom';
 
 // Components
 import PageTitle from '@/components/PageTitle';
@@ -16,6 +16,9 @@ function App() {
   // Get the URL params
   const params = useParams();
   const [isSidebarOpen, toggleSidebar] = useToggle() as [boolean, () => void];
+  const navigation = useNavigation();
+  const isNormalLoad = navigation.state === 'loading' && !navigation.formData;
+
   return (
     <>
       <PageTitle title='Phoenix - chat to supercharge your ideas' />
@@ -31,7 +34,11 @@ function App() {
           {/* Main content */}
           <div className='px-5 pb-5 flex flex-col overflow-y-auto'>
             <div className='max-w-[840px] w-full mx-auto-grow'>
-              {params.conversationId ? <Outlet /> : <Greetings />}
+              {isNormalLoad ? null : params.conversationId ? (
+                <Outlet />
+              ) : (
+                <Greetings />
+              )}
             </div>
           </div>
         </div>
