@@ -1,6 +1,12 @@
 // Node modules
 import { motion } from 'framer-motion';
-import { Outlet, useParams, useNavigation } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import {
+  Outlet,
+  useParams,
+  useNavigation,
+  useActionData,
+} from 'react-router-dom';
 
 // Components
 import PageTitle from '@/components/PageTitle';
@@ -11,6 +17,8 @@ import PromptField from './components/PromptField';
 
 // Custom hooks
 import useToggle from './hooks/useToggle';
+import { useSnackbar } from './hooks/useSnackbar';
+import { usePromptPreloader } from './hooks/usePromptPreloader';
 
 function App() {
   // Get the URL params
@@ -18,7 +26,29 @@ function App() {
   const [isSidebarOpen, toggleSidebar] = useToggle() as [boolean, () => void];
   const navigation = useNavigation();
   const isNormalLoad = navigation.state === 'loading' && !navigation.formData;
+  const { showSnackbar } = useSnackbar();
+  const { promptPreloaderValue } = usePromptPreloader();
+  const actionData = useActionData();
+  const chatHistoryRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const chatHistory = chatHistoryRef.current as HTMLDivElement;
+    if (promptPreloaderValue) {
+      chatHistory.scroll({
+        top: chatHistory.scrollHeight - chatHistory.clientHeight,
+        behavior: 'smooth',
+      });
+    }
+  }, [chatHistoryRef, promptPreloaderValue]);
+
+  useEffect(() => {
+    if (actionData?.conversationTitle) {
+      showSnackbar({
+        message: `Delete "${actionData.conversationTitle}" conversation`,
+        type: 'success',
+      });
+    }
+  }, [actionData, showSnackbar]);
   return (
     <>
       <PageTitle title='Phoenix - chat to supercharge your ideas' />

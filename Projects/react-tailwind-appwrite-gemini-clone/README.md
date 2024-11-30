@@ -108,3 +108,7 @@ install @google/generative-ai
 ```sh
 npm i react-markdown remark-gfm
 ```
+
+## Deploy to Vercel 6:24
+
+https://vercel.com/pricing

@@ -5,6 +5,8 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import ResetLink from '../pages/ResetLink';
 import ResetPassword from '../pages/ResetPassword';
+import ConversationError from '@/pages/ConversationError';
+import RootError from '@/pages/RootError';
 
 // Loaders
 import registerLoader from './loaders/registerLoader';
@@ -29,11 +31,13 @@ const Router = createBrowserRouter([
     element: <App />,
     loader: appLoader,
     action: appAction,
+    errorElement: <RootError />,
     children: [{
       path:'/:conversationId',
       element: <Conversation />,
       loader: conversationLoader,
       action: conversationAction,
+      errorElement: <ConversationError />,
     }],
   },
   {

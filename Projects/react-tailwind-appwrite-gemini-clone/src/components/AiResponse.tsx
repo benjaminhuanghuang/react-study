@@ -122,9 +122,11 @@ const AiResponse = ({ aiResponse, children }: AiResponseProps) => {
         />
       </figure>
       {children}
-      <div className='markdown-content'>
-        <Markdown remarkPlugins={[remarkGfm]}>{aiResponse}</Markdown>
-      </div>
+      {aiResponse && (
+        <div className='markdown-content'>
+          <Markdown remarkPlugins={[remarkGfm]}>{aiResponse}</Markdown>
+        </div>
+      )}
     </div>
   );
 };

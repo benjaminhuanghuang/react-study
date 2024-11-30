@@ -37,12 +37,27 @@ const userPromptAction = async (formData: any) => {
         conversation: conversation!.$id,
       },
     );
-
   } catch (error) {
     console.log(`Error in creating chat: ${error}`);
   }
 
   return redirect(`/${conversation!.$id}`);
+};
+
+const conversationAction = async (formData: any) => {
+  const conversationId = formData.get('conversation_id') as string;
+  const conversationTitle = formData.get('conversation_title') as string;
+
+  try {
+    await database.deleteDocument(
+      import.meta.env.VITE_APPWRITE_DATABASE_ID,
+      'conversations',
+      conversationId,
+    );
+    return { conversationTitle };
+  } catch (error) {
+    console.log(`Error in deleting conversation: ${error}`);
+  }
 };
 
 const appAction = async ({ request }: any) => {
@@ -51,6 +66,9 @@ const appAction = async ({ request }: any) => {
 
   if (requestType === 'user_prompt') {
     return await userPromptAction(formData);
+  }
+  if (requestType === 'delete_conversation') {
+    return await conversationAction(formData);
   }
 };
 
