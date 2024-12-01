@@ -1,4 +1,7 @@
 import React from 'react';
+// Components
+import { ButtonPrimary } from './Button';
+
 
 export const Hero = () => {
   return (
@@ -27,12 +30,21 @@ export const Hero = () => {
               Available for work
             </div>
           </div>
-          <h2 className='headline-1'>Building Scalable Modern Websites for the Future</h2>
-          <div className=''>Button Primary Button Outline</div>
+          <h2 className='headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-w-[15ch] mt-5 mb-8 lg:mb-10'>
+            Building Scalable Modern Websites for the Future
+          </h2>
+          <div className='flex item-center gap-3'>
+            <ButtonPrimary/>
+            Button Outline
+          </div>
         </div>
-
-        <div className=''>
-          <figure className=''>
+        {/* Big pic */}
+        <div className='hidden lg:block'>
+          <figure
+            className='w-full max-w-[480px] ml-auto bg-gradient-to-t
+           from-sky-400 via-25% via-key-400/40  to-65% rounded-[60px]
+            overflow-hidden'
+          >
             <img
               src='/images/hero-banner.png'
               alt='Name'
