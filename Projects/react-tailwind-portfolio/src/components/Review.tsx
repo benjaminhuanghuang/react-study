@@ -54,7 +54,7 @@ const Review = () => {
             <h2 className="headline-2">
                 What our customers say
             </h2>
-            <div className=''>
+            <div className='flex items-stretch gap-3 w-fit'>
                 {
                     reviews.map((review, index) => (
                         <ReviewCard
