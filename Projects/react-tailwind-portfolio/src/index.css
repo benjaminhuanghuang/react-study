@@ -19,7 +19,7 @@ body {
 * Typography
 */
 
-.headline-1 {
+.headline-1, .headline-2 {
     @apply max-w-max;
     background: -webkit-linear-gradient(0deg, #fafafa, #a1a1a1);
     -webkit-background-clip: text;
@@ -30,6 +30,11 @@ body {
     @apply text-5xl leading-tight font-semibold 
     lg:text-[55px] lg:leading-[1.15]
 }
+
+.headline-2 {
+    @apply text-3xl lg:text-4xl lg:leading-tight font-semibold
+}
+
 
 
 /**
@@ -47,8 +52,11 @@ body {
 .img-box {
     @apply bg-zinc-700 overflow-hidden
 }
-.img-conver {
+.img-cover {
     @apply w-full h-full object-cover
+}
+.section {
+    @apply pt-20 lg:pt-32
 }
 
 
@@ -99,4 +107,20 @@ body {
 
 .btn-secondary {
     @apply bg-zinc-50 text-zinc-900 hover:bg-zinc-50/80
+}
+
+.btn .material-symbols-rounded {
+    @apply text-[18px]
+}
+
+.btn:has( .material-symbols-rounded) {
+    @apply pr-3
+} 
+
+.btn-primary {
+    @apply h-11 bg-sky-400 text-zinc-950 hover:bg-sky-300 active:bg-sky-400
+}
+
+.but-outline {
+    @apply h-11 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800
 }

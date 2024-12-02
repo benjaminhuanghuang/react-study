@@ -1,9 +1,8 @@
 import React from 'react';
 // Components
-import { ButtonPrimary } from './Button';
+import { ButtonPrimary, ButtonOutline } from './Button';
 
-
-export const Hero = () => {
+const Hero = () => {
   return (
     <section
       id='home'
@@ -34,8 +33,15 @@ export const Hero = () => {
             Building Scalable Modern Websites for the Future
           </h2>
           <div className='flex item-center gap-3'>
-            <ButtonPrimary/>
-            Button Outline
+            <ButtonPrimary
+              label='Download CV'
+              icon='download'
+            />
+            <ButtonOutline
+              href='#about'
+              label='Scroll down'
+              icon='arrow_downward'
+            />
           </div>
         </div>
         {/* Big pic */}
@@ -58,3 +64,6 @@ export const Hero = () => {
     </section>
   );
 };
+
+
+export default Hero;
