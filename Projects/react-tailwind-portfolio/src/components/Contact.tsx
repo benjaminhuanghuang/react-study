@@ -163,7 +163,6 @@ const Contact = () => {
             type='submit'
             className='btn btn-primary [&]:max-w-full w-full justify-center'
           >
-            {' '}
             Submit
           </button>
         </form>
