@@ -46,7 +46,7 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        {/* The nav links */}
+        {/* The nav links and buttons */}
         <div
           className="hidden w-full md:flex md:w-auto flex-grow justify-between items-center ml-6"
           id="navbar-multi-level"
