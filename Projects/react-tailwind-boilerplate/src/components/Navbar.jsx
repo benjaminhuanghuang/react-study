@@ -1,6 +1,9 @@
 /*
 https://flowbite.com/docs/components/navbar/
+Multi-level dropdown
 */
+
+import ModeSwitcher from "./ModeSwitcher";
 
 const Navbar = () => {
   return (
@@ -211,6 +214,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
+          <ModeSwitcher/>
         </div>
       </div>
     </nav>
