@@ -85,7 +85,7 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-              {/* Dropdown menu  */}
+              {/* Dropdown menu  divide-y used to dividers between child elements */}
               <div
                 id="dropdownNavbar"
                 className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
