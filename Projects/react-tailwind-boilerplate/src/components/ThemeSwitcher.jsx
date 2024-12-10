@@ -1,6 +1,6 @@
 import React from "react";
 
-const ModeSwitcher = () => {
+const ThemeSwitcher = () => {
   return (
     <button
       type="button"
@@ -32,4 +32,4 @@ const ModeSwitcher = () => {
   );
 };
 
-export default ModeSwitcher;
+export default ThemeSwitcher;

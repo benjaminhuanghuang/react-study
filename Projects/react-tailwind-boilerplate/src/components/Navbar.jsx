@@ -3,7 +3,7 @@ https://flowbite.com/docs/components/navbar/
 Multi-level dropdown
 */
 
-import ModeSwitcher from "./ModeSwitcher";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const Navbar = () => {
   return (
@@ -48,7 +48,7 @@ const Navbar = () => {
         </button>
         {/* The nav links */}
         <div
-          className="hidden w-full md:block md:w-auto "
+          className="hidden w-full md:flex md:w-auto flex-grow justify-between items-center ml-6"
           id="navbar-multi-level"
           style={{ border: "1px solid red" }}
         >
@@ -214,7 +214,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <ModeSwitcher/>
+          <ThemeSwitcher/>
         </div>
       </div>
     </nav>
