@@ -23,8 +23,8 @@ https://tailwindcss.com/docs/guides/vite
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
-Modify tailwind.config.js
-Update index.css
+- Modify tailwind.config.js
+- Update index.css
 
 
 ## Dark mode
