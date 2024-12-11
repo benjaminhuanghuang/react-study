@@ -1,12 +1,6 @@
-
-# React + TS + Tailwind + ESlint + Prettier Boilerplate
+# React +JS + Tailwind + ESlint + Prettier Boilerplate
 
 ## Setup
-
-### Prettier
-```
-npm i -D prettier
-```
 
 ### Router
 ```sh
@@ -23,8 +17,6 @@ npx tailwindcss init -p
 Modify tailwind.config.js
 
 Update index.css
-
-
 
 
 ## Dark mode

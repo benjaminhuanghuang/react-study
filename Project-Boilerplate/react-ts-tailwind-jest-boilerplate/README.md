@@ -1,6 +1,12 @@
-# React +JS + Tailwind + ESlint + Prettier Boilerplate
+
+# React + TS + Tailwind + ESlint + Prettier Boilerplate
 
 ## Setup
+
+### Prettier
+```sh
+npm i -D prettier
+```
 
 ### Router
 ```sh
