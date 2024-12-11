@@ -1,4 +1,4 @@
-# React + Tailwind Boilerplate
+# React +JS + Tailwind + ESlint + Prettier Boilerplate
 
 ## Setup
 
