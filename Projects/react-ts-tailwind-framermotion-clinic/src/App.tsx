@@ -17,7 +17,7 @@ function App() {
         <SocialProof />
         <Features />
         <FirstCTA />
-        <WhyUs />
+        {/* <WhyUs /> */}
         <SecondCTA />
         <Footer />
       </main>
