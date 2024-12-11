@@ -3,10 +3,45 @@
 
 ## Setup
 
+### Vite project setup
+- Change port
+
+### Support alias @
+Modify vite.config.ts
+```js
+resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'), // Map '@' to the 'src' directory
+    },
+  },
+```
+Install type for path module
+```sh
+npm i @types/node -D
+```
+
+Add the same alias in your tsconfig.json file under the paths property:
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".", // Ensure this is set to the root directory
+    "paths": {
+      "@/*": ["src/*"] // Map '@/*' to 'src/*'
+    }
+  }
+}
+```
+
+### Jest
+```sh
+npm i -D jest
+```
+
 ### Prettier
 ```sh
 npm i -D prettier
 ```
+Modify .prettierrc
 
 ### Router
 ```sh

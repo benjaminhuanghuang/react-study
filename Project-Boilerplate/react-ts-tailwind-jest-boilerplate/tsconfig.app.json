@@ -20,7 +20,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    // support @
+    "baseUrl": ".", // Ensure this is set to the root directory
+    "paths": {
+      "@/*": ["src/*"] // Map '@/*' to 'src/*'
+    }
   },
   "include": ["src"]
 }
