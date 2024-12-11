@@ -2,6 +2,21 @@
 
 ## Setup
 
+### Vite project setup
+- Support alias @
+- Change port
+
+### Jest
+```sh
+npm i -D jest
+```
+
+### Prettier
+```sh
+npm i -D prettier
+```
+Modify .prettierrc
+
 ### Router
 ```sh
 npm install react-router-dom
