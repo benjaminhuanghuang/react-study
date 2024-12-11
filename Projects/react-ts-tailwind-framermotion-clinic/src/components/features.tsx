@@ -4,10 +4,9 @@ import security from "../assets/icon-1.png";
 import health from "../assets/icon-2.png";
 import care from "../assets/icon-3.png";
 import doc from "../assets/icon-4.png";
-
-import phone from "../assets/services-1.png";
+import serve from "../assets/services-1.png";
 import provide from "../assets/banner-11.png";
-import banner from "../assets/banner-right.png";
+import banner from "../assets/banner_right.png";
 import patient from "../assets/banner-six-2.png";
 
 const Features = () => {
@@ -73,6 +72,79 @@ const Features = () => {
               Services at Mavis Clinic. Experience virtual consultations
             </p>
           </div>
+          <img src={serve} alt="" className="w-[400px]" />
+        </div>
+        {/* Card */}
+        <div
+          className="card-gradient-two flex h-[600px] w-full
+        flex-col items-center justify-between overflow-hidden rounded-[40px]
+        border border-[#ced5de] lg:w-[486px]"
+        >
+          {/* Card wrapper */}
+          <div className="w-full px-12 pb-8 pt-12">
+            <img src={security} alt="" />
+            <h4 className="mt-6 text-[24px] font-bold leading-8 tracking-[-0.384px] text-[#302b45]">
+              Unique Approach To Your Health Needs
+            </h4>
+            <p className="mt-4 text-base font-medium leading-6 tracking-[-0.16px] text-[#2f2b43]/60">
+              Embrace the convenience of healthcare with our Telemedicine
+              Services at Mavis Clinic. Experience virtual consultations
+            </p>
+          </div>
+          <img
+            src={patient}
+            alt=""
+            className="-mt-28 absolute right-0 w-[35%] bottom-0"
+          />
+        </div>
+      </div>
+      {/* Second row */}
+      <div
+        className="relative mt-5 flex w-full flex-col
+            items-center justify-between gap-8 md:mt-0 md:flex-row
+            xl:gap-0 3xl:max-w-[1200px]"
+      >
+        {/* Card */}
+        <div
+          className="card-gradient-three flex h-[600px] w-full
+        flex-col items-center justify-between overflow-hidden rounded-[40px]
+        border border-[#ced5de] lg:w-[486px]"
+        >
+          {/* Card wrapper */}
+          <div className="w-full px-12 pb-8 pt-12">
+            <img src={security} alt="" />
+            <h4 className="mt-6 text-[24px] font-bold leading-8 tracking-[-0.384px] text-[#302b45]">
+              Unique Approach To Your Health Needs
+            </h4>
+            <p className="mt-4 text-base font-medium leading-6 tracking-[-0.16px] text-[#2f2b43]/60">
+              Embrace the convenience of healthcare with our Telemedicine
+              Services at Mavis Clinic. Experience virtual consultations
+            </p>
+          </div>
+          <img
+            src={banner}
+            alt=""
+            className="-mt-28 relative w-[65%] left-36"
+          />
+        </div>
+        {/* Card */}
+        <div
+          className="card-gradient-four flex h-[600px] w-full
+        flex-col items-center justify-between overflow-hidden rounded-[40px]
+        border border-[#ced5de] lg:w-[486px]"
+        >
+          {/* Card wrapper */}
+          <div className="w-full px-12 pb-8 pt-12">
+            <img src={health} alt="" />
+            <h4 className="mt-6 text-[24px] font-bold leading-8 tracking-[-0.384px] text-[#302b45]">
+              Unique Approach To Your Health Needs
+            </h4>
+            <p className="mt-4 text-base font-medium leading-6 tracking-[-0.16px] text-[#2f2b43]/60">
+              Embrace the convenience of healthcare with our Telemedicine
+              Services at Mavis Clinic. Experience virtual consultations
+            </p>
+          </div>
+          <img src={provide} alt="" className="w-[400px]" />
         </div>
       </div>
     </section>

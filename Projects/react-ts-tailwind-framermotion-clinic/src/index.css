@@ -36,7 +36,7 @@ body {
       #fff 100%);
 }
 
-• card-gradient-two {
+.card-gradient-two {
   background: radial-gradient(186.08% 130.76% at 92.25% 123.75%,
       #eeeffb 5.59%,
       #fff4ee 44.79%,
@@ -52,7 +52,6 @@ body {
 
 .card-gradient-four {
   background: radial-gradient(186.08% 130.76% at 92.25% 123.75%,
-      123.75%,
       #fbeef2 5.59%,
       #eefcff 44.79%,
       #fff 100%);
