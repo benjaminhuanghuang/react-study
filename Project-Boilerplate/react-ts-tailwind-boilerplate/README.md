@@ -3,6 +3,13 @@
 
 ## Setup
 
+### Dev tools
+Prettier
+```sh
+npm i -D prettier
+```
+Modify .prettierrc
+
 ### Vite project setup
 - Change port
 
@@ -32,16 +39,7 @@ Add the same alias in your tsconfig.json file under the paths property:
 }
 ```
 
-### Jest
-```sh
-npm i -D jest
-```
 
-### Prettier
-```sh
-npm i -D prettier
-```
-Modify .prettierrc
 
 ### Router
 ```sh
