@@ -4,3 +4,10 @@ https://github.com/frontendadvance/Build-a-Stunning-React-Next-JS-Typescript-Tai
 
 https://www.bilibili.com/video/BV1hPqAYtErt
 
+
+
+
+
+## Second Cta  1:28
+
+## Navbar  1:38

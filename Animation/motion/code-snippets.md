@@ -38,3 +38,27 @@ y1 and y2 are the vertical control points (on the Y-axis).
     <img className='img-fluid w-75 mt-4 mt-lg-0' src={AboutImg} alt='About us' />
 </motion.div>
 ```
+
+## Button with mask
+```html
+ <button className="group relative h-[56px] w-[180px] overflow-hidden 
+rounded-full border-2 border-[#131S316] text-base font-medium leading-[28px] 
+text-[#445568] shadow-[0_1px_2px_0_rgba(14,24,41,0.05] md:h-[60px] md:w-[202px] md:text-[18px]">
+    <div className="absolute -left-1 bottom-0 right-0 -z-10 !mx-auto h-[0px] 
+    w-[207px] rounded-full bg-violet-900 transition-all duration-300 group-hover:h-[59px]"></div>
+    <span className="group-hover:text-white">Book Now</span>
+</button>
+```
+
+## Button with link
+```html
+ <button
+    className="flex h-[56px] w-[180px] items-center justify-center
+            gap-3 rounded-full text-base font-medium leading-[28px] text-[#445568] 
+            underline-offset-8 transition-all hover:underline
+            md:h-[60pxl md:w-[202px] md:text-[18px]"
+    >
+    <span>Appointment</span>
+    <img src={arrow} alt="" />
+</button>
+```
