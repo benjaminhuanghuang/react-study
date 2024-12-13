@@ -51,9 +51,9 @@ export const Carousel: React.FC<CarouselProps> = ({
   const carouselListRef = useRef<HTMLDivElement | null>(null);
 
   function generateSlides() {
-    // To implement the cyclic carouse, clone the first and last elements
+    // To implement the cyclic carousel, clone the first and last elements
     const slidesItems = [items.at(-1), ...items, items[0]];
-    const slides = slidesItems.map((item, i) => (
+    return slidesItems.map((item, i) => (
       // marginLeft: -100% push the first slide, which is the clone of last,  out of the view
       <div
         key={i}
@@ -61,11 +61,9 @@ export const Carousel: React.FC<CarouselProps> = ({
           backgroundImage: `url(${item!.image})`,
           marginLeft: i === 0 ? '-100%' : '0',
         }}
-        className='bg-center bg-cover h-96 flex items-center justify-center flex-shrink-0 w-full'
+        className='bg-center bg-cover h-96 flex-shrink-0 w-full'
       ></div>
     ));
-
-    return slides;
   }
 
   function goTo(index: number) {
@@ -80,7 +78,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   // Automatically change the slide every interval
   useEffect(() => {
     const timer = setInterval(() => {
-      // nextSlide();
+      nextSlide();
     }, interval);
 
     return () => clearInterval(timer);
