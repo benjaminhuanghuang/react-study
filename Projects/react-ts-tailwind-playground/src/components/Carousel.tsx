@@ -22,13 +22,13 @@ Use the transform:translateX(-100%)
 2. left
 3. right
 
-Tricky part:
-[][][][][][]
+Tricky part for cycle carousel:
+[3][1][2][3][1]
 
 */
 
 import React, { useState, useEffect, useRef } from 'react';
-import _ from 'lodash';
+import _, { at } from 'lodash';
 import './Carousel.css';
 
 interface CarouselItemProps {
@@ -51,14 +51,8 @@ export const Carousel: React.FC<CarouselProps> = ({
   const carouselListRef = useRef<HTMLDivElement | null>(null);
 
   function generateSlides() {
-    const slidesItems = [...items];
-    // To implement the cyclic carouse,  clone the first and last elements
-    // deep clone the first child and append it to the end of the list
-    const firstClone = _.cloneDeep(slidesItems[0]);
-    const lastClone = _.cloneDeep(slidesItems[items.length - 1]);
-    slidesItems.push(firstClone);
-    slidesItems.unshift(lastClone);
-
+    // To implement the cyclic carouse, clone the first and last elements
+    const slidesItems = [items.at(-1), ...items, items[0]];
     const slides = slidesItems.map((item, i) => (
       // marginLeft: -100% push the first slide, which is the clone of last,  out of the view
       <div
@@ -66,9 +60,10 @@ export const Carousel: React.FC<CarouselProps> = ({
         className='flex-shrink-0 w-full'
         style={i === 0 ? { marginLeft: '-100%' } : {}}
       >
-        <div style={{ backgroundImage: `url(${item.image})` }}
-            className='bg-center bg-cover  h-96  flex items-center justify-center'>
-        </div>
+        <div
+          style={{ backgroundImage: `url(${item!.image})` }}
+          className='bg-center bg-cover  h-96  flex items-center justify-center'
+        ></div>
       </div>
     ));
 
@@ -79,7 +74,7 @@ export const Carousel: React.FC<CarouselProps> = ({
     const carouselList = carouselListRef.current as HTMLElement;
     carouselList.style.transform = `translateX(-${index * 100}%)`;
     // when the transform property of the element changes, the change should happen over 0.5 seconds
-    carouselList.style.transition = 'transform 0.5s';
+    // carouselList.style.transition = 'transform 0.5s';
     // set index
     setCurrIndex(index);
   }
@@ -97,6 +92,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   const prevSlide = () => {
     if (currIndex === 0) {
       /*
+        cycle carousel
         when the first slide is reached,  
         remove the transition effect, jump the the clone of the first slide real quick
         then jump to the real last slide
@@ -123,7 +119,7 @@ export const Carousel: React.FC<CarouselProps> = ({
         then jump to the real first slide
       */
       const carouselList = carouselListRef.current as HTMLElement;
-      carouselList.style.transition = 'none';
+      // carouselList.style.transition = 'none';
       carouselList.style.transform = `translateX(100%)`;
       //carouselList.offsetHeight;
       goTo(0);
@@ -133,11 +129,12 @@ export const Carousel: React.FC<CarouselProps> = ({
   };
 
   return (
-    <div className='relative w-[700px] height-[300px] overflow-hidden ml-auto mr-auto'>
+    <div id="carousel-container" className='relative w-[700px] height-[300px] overflow-hidden ml-auto mr-auto'>
       <div
-        className='carousel-list'
+        id='carousel-list'
         ref={carouselListRef}
-      >
+        className='w-full h-full flex relative -z-1  transform transition-transform duration-[3000ms] hover:scale-110'
+        >
         {generateSlides()}
       </div>
 
