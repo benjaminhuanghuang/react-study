@@ -8,7 +8,7 @@ https://www.bilibili.com/video/BV1hPqAYtErt
 
 
 ## First Cta  1:01
-
+4 card: 1:06
 
 ## Second Cta  1:28
 
