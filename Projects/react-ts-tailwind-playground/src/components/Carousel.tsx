@@ -1,13 +1,51 @@
-import React, { useState, useEffect, useRef } from "react";
-import _ from "lodash";
-import "./Carousel.css";
+/*
+https://www.bilibili.com/video/BV1gz1jYnEND/?spm_id_from=333.999.0.0
 
+DOM structure:
+    carousel-container
+        carousel-list
+            carousel-item 1
+            carousel-item 2
+            carousel-item 3
+        carousel-arrow-left
+        carousel-arrow-right
+        indicator
+            span
+        
+Implementation:
+carousel-container: overflow = hidden
+
+Use the transform:translateX(-100%)
+
+
+1. goTo(index)
+2. left
+3. right
+
+Tricky part:
+[][][][][][]
+
+*/
+
+import React, { useState, useEffect, useRef } from 'react';
+import _ from 'lodash';
+import './Carousel.css';
+
+interface CarouselItemProps {
+  id: number;
+  image: string;
+  title?: string;
+  information?: string;
+}
 interface CarouselProps {
-  items: { content: JSX.Element }[]; // Define item structure
+  items: CarouselItemProps[]; // Define item structure
   interval?: number; // Optional interval for automatic sliding
 }
 
-const Carousel: React.FC<CarouselProps> = ({ items, interval = 3000 }) => {
+export const Carousel: React.FC<CarouselProps> = ({
+  items,
+  interval = 3000,
+}) => {
   const [currIndex, setCurrIndex] = useState(0);
   const count = items.length;
   const carouselListRef = useRef<HTMLDivElement | null>(null);
@@ -25,35 +63,23 @@ const Carousel: React.FC<CarouselProps> = ({ items, interval = 3000 }) => {
       // marginLeft: -100% push the first slide, which is the clone of last,  out of the view
       <div
         key={i}
-        className="flex-shrink-0 w-full"
-        style={i === 0 ? { marginLeft: "-100%" } : {}}
+        className='flex-shrink-0 w-full'
+        style={i === 0 ? { marginLeft: '-100%' } : {}}
       >
-        {item.content}
+        <div className='h-96  flex items-center justify-center'>
+          <img src={item.image} />
+        </div>
       </div>
     ));
 
     return slides;
   }
 
-  function generateIndicatorButtons() {
-    const indicatorButtons = [];
-    for (let i = 0; i < items.length; i++) {
-      indicatorButtons.push(
-        <span
-          key={i}
-          className={i === currIndex ? "active" : ""}
-          onClick={() => moveTo(i)}
-        ></span>
-      );
-    }
-    return indicatorButtons;
-  }
-
-  function moveTo(index: number) {
+  function goTo(index: number) {
     const carouselList = carouselListRef.current as HTMLElement;
     carouselList.style.transform = `translateX(-${index * 100}%)`;
     // when the transform property of the element changes, the change should happen over 0.5 seconds
-    carouselList.style.transition = "transform 0.5s";
+    carouselList.style.transition = 'transform 0.5s';
     // set index
     setCurrIndex(index);
   }
@@ -76,15 +102,15 @@ const Carousel: React.FC<CarouselProps> = ({ items, interval = 3000 }) => {
         then jump to the real last slide
       */
       const carouselList = carouselListRef.current as HTMLElement;
-      carouselList.style.transition = "none";
+      carouselList.style.transition = 'none';
       // move the view port to clone of first element at the end of the list
       carouselList.style.transform = `translateX(-${count * 100}%)`;
       // force browse reflow, refresh the page.
       // without this line, the transition = "none"; effect will not work
-      carouselList.offsetHeight;
-      moveTo(count - 1);
+      //carouselList.offsetHeight;
+      goTo(count - 1);
     } else {
-      moveTo(currIndex - 1);
+      goTo(currIndex - 1);
     }
   };
 
@@ -97,37 +123,48 @@ const Carousel: React.FC<CarouselProps> = ({ items, interval = 3000 }) => {
         then jump to the real first slide
       */
       const carouselList = carouselListRef.current as HTMLElement;
-      carouselList.style.transition = "none";
+      carouselList.style.transition = 'none';
       carouselList.style.transform = `translateX(100%)`;
-      carouselList.offsetHeight;
-      moveTo(0);
+      //carouselList.offsetHeight;
+      goTo(0);
     } else {
-      moveTo(currIndex + 1);
+      goTo(currIndex + 1);
     }
   };
 
   return (
-    <div className="carousel-container">
-      <div className="carousel-list" ref={carouselListRef}>
+    <div className='carousel-container'>
+      <div
+        className='carousel-list'
+        ref={carouselListRef}
+      >
         {generateSlides()}
       </div>
 
       {/* Navigation buttons */}
       <button
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2"
+        className='absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2'
         onClick={prevSlide}
       >
         &#10094; {/* Left arrow */}
       </button>
       <button
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2"
+        className='absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2'
         onClick={nextSlide}
       >
         &#10095; {/* Right arrow */}
       </button>
-      <div className="indictor">{generateIndicatorButtons()}</div>
+      <div className='flex justify-center items-center gap-2 z-10'>
+        {items.map((item, i) => (
+          <span
+            key={item.id}
+            onClick={() => goTo(i)}
+            className={`w-[10px] h-[10px]  rounded-full cursor-pointer hover:bg-[#555]  ${i === currIndex ? 'bg-[#333]' : 'bg-[#ccc]'}`}
+          >
+            {i === currIndex}
+          </span>
+        ))}
+      </div>
     </div>
   );
 };
-
-export default Carousel;
