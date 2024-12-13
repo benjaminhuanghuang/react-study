@@ -57,14 +57,12 @@ export const Carousel: React.FC<CarouselProps> = ({
       // marginLeft: -100% push the first slide, which is the clone of last,  out of the view
       <div
         key={i}
-        className='flex-shrink-0 w-full'
-        style={i === 0 ? { marginLeft: '-100%' } : {}}
-      >
-        <div
-          style={{ backgroundImage: `url(${item!.image})` }}
-          className='bg-center bg-cover  h-96  flex items-center justify-center'
-        ></div>
-      </div>
+        style={{
+          backgroundImage: `url(${item!.image})`,
+          marginLeft: i === 0 ? '-100%' : '0',
+        }}
+        className='bg-center bg-cover h-96 flex items-center justify-center flex-shrink-0 w-full'
+      ></div>
     ));
 
     return slides;
