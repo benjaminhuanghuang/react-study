@@ -66,8 +66,8 @@ export const Carousel: React.FC<CarouselProps> = ({
         className='flex-shrink-0 w-full'
         style={i === 0 ? { marginLeft: '-100%' } : {}}
       >
-        <div className='h-96  flex items-center justify-center'>
-          <img src={item.image} />
+        <div style={{ backgroundImage: `url(${item.image})` }}
+            className='bg-center bg-cover  h-96  flex items-center justify-center'>
         </div>
       </div>
     ));
@@ -133,7 +133,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   };
 
   return (
-    <div className='carousel-container'>
+    <div className='relative w-[700px] height-[300px] overflow-hidden ml-auto mr-auto'>
       <div
         className='carousel-list'
         ref={carouselListRef}
@@ -154,12 +154,15 @@ export const Carousel: React.FC<CarouselProps> = ({
       >
         &#10095; {/* Right arrow */}
       </button>
-      <div className='flex justify-center items-center gap-2 z-10'>
+      <div
+        className='flex w-full justify-center items-center gap-3 z-10 absolute bottom-2'
+        style={{ border: '10px' }}
+      >
         {items.map((item, i) => (
           <span
             key={item.id}
             onClick={() => goTo(i)}
-            className={`w-[10px] h-[10px]  rounded-full cursor-pointer hover:bg-[#555]  ${i === currIndex ? 'bg-[#333]' : 'bg-[#ccc]'}`}
+            className={`w-[10px] h-[10px] rounded-full cursor-pointer hover:bg-[#555] ${i === currIndex ? 'bg-[#333] transform scale-[1.3]' : 'bg-[#ccc]'}`}
           >
             {i === currIndex}
           </span>
