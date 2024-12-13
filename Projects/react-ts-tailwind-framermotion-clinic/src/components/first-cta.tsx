@@ -88,7 +88,7 @@ blur-[350px] sm:w-[425px]"
         </div>
         {/* 4 card with animation */}
         <motion.div
-          initial={{ opacity: 0}}
+          initial={{ opacity: 0 }}
           whileInView={{
             opacity: 1,
             transition: { duration: 0.8, ease: [0.44, 0, 0, 1] },
@@ -97,8 +97,8 @@ blur-[350px] sm:w-[425px]"
             amount: "some",
             once: true,
           }}
-          className="md:-bottom-[50px] lg:right-[149px] absolute -bottom-[0px] left-0 right-0 z-30 hidden 
-          h-[400px] w-full flex-col justify-start -space-y-[140px] overflow-clip sm:h- [500px] sm:-space-y-[290px]
+          className="md:-bottom-[50px] absolute -bottom-[0px] left-0 right-0 z-30 hidden 
+          h-[400px] w-full flex-col justify-start -space-y-[140px] overflow-clip sm:h-[500px] sm:-space-y-[290px]
           md:left-auto md:right-[50px] md:h-[500px] md:w-auto md:-space-y-[320px] lg:right-0 lg:h-[650px]
           lg:-space-y-[290px] xl:flex xl:-space-y-0"
         >
@@ -178,7 +178,7 @@ blur-[350px] sm:w-[425px]"
                 delay: 0.2,
               },
             }}
-            viewport={{  
+            viewport={{
               amount: "some",
               once: true,
             }}
@@ -207,6 +207,27 @@ blur-[350px] sm:w-[425px]"
             alt=""
             className="xl:translate-y-[290px]"
           />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{
+            opacity: 1,
+            transition: { duration: 0.8, ease: [0.44, 0, 0, 1] },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          className="md:-bottom-[50px] absolute -bottom-[0px] left-0 right-0 z-30 hidden 
+          h-[400px] w-full flex-col justify-start -space-y-[140px] overflow-clip sm:h-[500px] sm:-space-y-[290px]
+          md:left-auto md:right-[50px] md:h-[500px] md:w-auto md:-space-y-[320px] lg:right-0 lg:h-[650px]
+          lg:-space-y-[290px] xl:hidden xl:-space-y-0"
+        >
+          <img src={cardFour} alt="" className="z-[12]" />
+          <img src={cardThree} alt="" className="rote -[30deg] z-[11]" />
+          <img src={cardTwo} alt="" className="z-[10]" />
+          <img src={cardOne} alt="" />
+          <img src={shadow} alt=""/>
         </motion.div>
       </div>
     </section>
