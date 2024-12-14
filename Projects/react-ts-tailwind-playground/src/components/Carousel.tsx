@@ -28,7 +28,6 @@ Tricky part for cycle carousel:
 */
 
 import React, { useState, useEffect, useRef } from 'react';
-import _, { at } from 'lodash';
 import './Carousel.css';
 
 interface CarouselItemProps {
