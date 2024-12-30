@@ -1,0 +1,1 @@
+export type Language = "enUS" | "zhCN" | "zhTW"; // Add more languages as needed

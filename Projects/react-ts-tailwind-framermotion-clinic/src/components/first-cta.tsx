@@ -18,40 +18,90 @@ const FirstCTA = () => {
     >
       {/* the Halo */}
       <div
-        className="absolute bottom-0 left-0 right-0 top-0 mx-auto my-auto h-[425pxl w-full rounded-full bg-white
+        className="absolute bottom-0 left-0 right-0 top-0 mx-auto my-auto h-[425px] w-full rounded-full bg-white
 blur-[350px] sm:w-[425px]"
       />
       <div
-        className="relative h-[750px w-full
-      md:h-[900px] lg:h-[592px] 3xl:max-w-[1200px]"
+        className="relative h-[750px] w-full
+        md:h-[900px] lg:h-[592px] 3xl:max-w-[1200px]"
       >
+        {/*  Left part: title, text, button */}
         <div className="w-full py-16 md:w-[576px] md:py-24">
-          <h2 className="text-4xl font-bold leading-tight tracking-[-0.96px] text-[#fcfcfd] md:text-[48px]">
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.8, ease: [0.44, 0, 0, 1] },
+            }}
+            viewport={{
+              amount: "some",
+              once: true,
+            }}
+            className="text-4xl font-bold leading-tight tracking-[-0.96px] text-[#fcfcfd] md:text-[48px]"
+          >
             Different Card for Different Payments
-          </h2>
-          <p className="mt-6 text-base font-medium leading-6 text-[#ced5de] md:text-[20px] md:leading-[30px]">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.8, ease: [0.44, 0, 0, 1] },
+            }}
+            viewport={{
+              amount: "some",
+              once: true,
+            }}
+            className="mt-6 text-base font-medium leading-6 text-[#ced5de] md:text-[20px] md:leading-[30px]"
+          >
             We revolutionizes the way you make payments, offering a secure,
             convenient, and contactless way to complete transactions
-          </p>
-          <button
+          </motion.p>
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.8, ease: [0.44, 0, 0, 1] },
+            }}
+            viewport={{
+              amount: "some",
+              once: true,
+            }}
             className="mt-8 flex h-[56px] w-[190px] relative group
                   overflow-hidden items-center justify-center gap-3
                   rounded-full
                   bg-white text-base font-medium leading-[28px]
-                  text-[#314155] shadow-[0_1px_2px_0_rgba(14,24,41,
-                  0.05)]
+                  text-[#314155] shadow-[0_1px_2px_0_rgba(14,24,41,0.05)]
                   md:mt-12 md:h-[60px] md:w-[202px] md:text-[18px]"
           >
+            {/* button cover */}
             <div
-              className="absolute -left-1 bottom-0 right-0 z-10
+              className="absolute -left-1 bottom-0 right-0 z-10 
                   !mx-auto h-[0px] w-[207px] rounded-full bg-black
                   transition-all duration-300 group-hover:h-[61px]"
             />
             <span className="group-hover:text-white z-10"> Discover More</span>
             <img src={arrow} alt="" className="group-hover:invert z-10" />
-          </button>
+          </motion.button>
         </div>
-        <motion.div>
+        {/* 4 card with animation */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{
+            opacity: 1,
+            transition: { duration: 0.8, ease: [0.44, 0, 0, 1] },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          className="md:-bottom-[50px] absolute -bottom-[0px] left-0 right-0 z-30 hidden 
+          h-[400px] w-full flex-col justify-start -space-y-[140px] overflow-clip sm:h-[500px] sm:-space-y-[290px]
+          md:left-auto md:right-[50px] md:h-[500px] md:w-auto md:-space-y-[320px] lg:right-0 lg:h-[650px]
+          lg:-space-y-[290px] xl:flex xl:-space-y-0"
+        >
           <motion.img
             initial={{ opacity: 0, y: 250 }}
             whileInView={{
@@ -71,13 +121,13 @@ blur-[350px] sm:w-[425px]"
             }}
             src={cardFour}
             alt=""
-            className="z-[12] lg:-translate-y-0 xl: translate-y-[250px]"
+            className="z-[12] lg:-translate-y-0 xl:translate-y-[250px]"
           />
           <motion.img
             initial={{ opacity: 0, y: -130 }}
             whileInView={{
               opacity: 1,
-              y: -290,   /* next */
+              y: -290 /* next */,
               transition: {
                 type: "spring",
                 damping: 40,
@@ -92,7 +142,7 @@ blur-[350px] sm:w-[425px]"
             }}
             src={cardThree}
             alt=""
-            className="z-[12] lg:-translate-y-0 xl: translate-y-[250px]"
+            className="rotate -[30deg] z-[11] lg:-translate-y-[290px] xl:translate-y-[130px]"
           />
           <motion.img
             initial={{ opacity: 0, y: -500 }}
@@ -113,7 +163,7 @@ blur-[350px] sm:w-[425px]"
             }}
             src={cardTwo}
             alt=""
-            className="z-[12] lg:-translate-y-0 xl: translate-y-[250px]"
+            className="z-[10] lg:-translate-y-[580px] xl:translate-y-[580px]"
           />
           <motion.img
             initial={{ opacity: 0, y: -870 }}
@@ -132,15 +182,15 @@ blur-[350px] sm:w-[425px]"
               amount: "some",
               once: true,
             }}
-            src={cardFour}
+            src={cardOne}
             alt=""
-            className="z-[12] lg:-translate-y-0 xl: translate-y-[250px]"
+            className="xl:translate-y-[870px]"
           />
           <motion.img
             initial={{ opacity: 0, y: 0 }}
             whileInView={{
               opacity: 1,
-              y: 0,
+              y: -290,
               transition: {
                 type: "spring",
                 damping: 40,
@@ -155,8 +205,29 @@ blur-[350px] sm:w-[425px]"
             }}
             src={shadow}
             alt=""
-            className="z-[12] lg:-translate-y-0 xl: translate-y-[250px]"
+            className="xl:translate-y-[290px]"
           />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{
+            opacity: 1,
+            transition: { duration: 0.8, ease: [0.44, 0, 0, 1] },
+          }}
+          viewport={{
+            amount: "some",
+            once: true,
+          }}
+          className="md:-bottom-[50px] absolute -bottom-[0px] left-0 right-0 z-30 hidden 
+          h-[400px] w-full flex-col justify-start -space-y-[140px] overflow-clip sm:h-[500px] sm:-space-y-[290px]
+          md:left-auto md:right-[50px] md:h-[500px] md:w-auto md:-space-y-[320px] lg:right-0 lg:h-[650px]
+          lg:-space-y-[290px] xl:hidden xl:-space-y-0"
+        >
+          <img src={cardFour} alt="" className="z-[12]" />
+          <img src={cardThree} alt="" className="rote -[30deg] z-[11]" />
+          <img src={cardTwo} alt="" className="z-[10]" />
+          <img src={cardOne} alt="" />
+          <img src={shadow} alt=""/>
         </motion.div>
       </div>
     </section>
