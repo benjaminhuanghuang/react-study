@@ -1,6 +1,7 @@
 # useRef
+
 - used to reference a value that's not needed for rendering.
-- used to manage Dom elements
+- used to operator Dom elements
 
 ```js
 function Component() {

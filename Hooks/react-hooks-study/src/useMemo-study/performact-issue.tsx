@@ -6,7 +6,7 @@ In this sample, setCount() triggers a re-render of the component.
 */
 
 
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 const initialItems = new Array(29_999_999).fill(0).map((_, i) => {
   return {
@@ -15,9 +15,8 @@ const initialItems = new Array(29_999_999).fill(0).map((_, i) => {
   };
 });
 
-interface DemoProps {}
 
-function Demo({}: DemoProps) {
+function Demo() {
   const [count, setCount] = useState(0);
   const [items] = useState(initialItems);
 
