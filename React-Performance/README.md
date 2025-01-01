@@ -7,15 +7,14 @@ Wrong method
 key={Math.random()}
 ```
 
+## Avoid unnecessary render
+### memo
+Skip render if there is no change in props
 
-## memo
+### shouldComponentUpdate
 
 
-
-## shouldComponentUpdate
-
-
-## PureComponent
+### PureComponent
 
 
 
