@@ -1,7 +1,7 @@
 # useCallback
 
 In React, useCallback is a hook used to memoize a function. 
-This means that React will remember the function and only recreate it when one of its dependencies changes
+This means that React will remember the function and only `recreate` it when one of its dependencies changes
 
 It's particularly useful when passing callback functions to child components, preventing unnecessary re-renders or expensive computations.
 

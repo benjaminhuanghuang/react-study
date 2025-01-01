@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 
-import UserContext, { UserState } from "./store";
+import UserContext, { UserState } from "../../../react-hooks-ts/src/store";
 
 function ConsumerComponent() {
   const user = useContext<UserState>(UserContext);

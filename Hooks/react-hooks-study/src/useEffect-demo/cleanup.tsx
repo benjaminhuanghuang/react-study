@@ -7,14 +7,10 @@ export const Hello = () => {
   useEffect(() => {
     console.log("render");
 
-    return ()=>{
+    return () => {
       console.log("unmount");
-    }
+    };
   }, []);
 
-  return (
-    <div>
-      Hello
-    </div>
-  );
+  return <div>Hello</div>;
 };
