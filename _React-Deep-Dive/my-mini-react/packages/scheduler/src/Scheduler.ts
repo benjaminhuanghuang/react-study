@@ -95,6 +95,8 @@ function scheduleCallback(
       if (!isHostCallbackScheduled && !isPerformingWork) {
         isHostCallbackScheduled = true; // lock the main thread
         requestHostCallback();
+      } else {
+        
       }
     }
   } else {

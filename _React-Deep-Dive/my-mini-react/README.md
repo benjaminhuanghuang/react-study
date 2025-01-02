@@ -2,6 +2,9 @@
 
 Monorepo + pnpm + vite + vitest
 
+https://www.bilibili.com/video/BV1SDm2Y3ETD
+
+
 ## Setup
 ```sh
 npm init -y
