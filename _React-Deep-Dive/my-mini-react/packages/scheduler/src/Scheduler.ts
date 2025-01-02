@@ -16,7 +16,7 @@ import {
   IdlePriority,
 } from "./SchedulerPriorities";
 
-type Callback = (arg: boolean) => Callback | null | undefined;
+type Callback = (arg: boolean) => Callback | null;
 
 export type Task = {
   id: number;
@@ -96,7 +96,6 @@ function scheduleCallback(
         isHostCallbackScheduled = true; // lock the main thread
         requestHostCallback();
       } else {
-        
       }
     }
   } else {

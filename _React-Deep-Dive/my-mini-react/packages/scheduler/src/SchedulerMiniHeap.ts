@@ -5,7 +5,7 @@ export type Node = {
   sortIndex: number; // use for sorting
 };
 
-export function peek<T extends Node>(heap: Heap<T>): Node | null {
+export function peek<T extends Node>(heap: Heap<T>): T | null {
   return heap.length > 0 ? heap[0] : null;
 }
 
@@ -20,7 +20,7 @@ export function push<T extends Node>(heap: Heap<T>, node: T): void {
   siftUp(heap, node, index);
 }
 
-export function pop<T extends Node>(heap: Heap<T>): Node | null {
+export function pop<T extends Node>(heap: Heap<T>): T | null {
   if (heap.length === 0) {
     return null;
   }
