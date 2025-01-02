@@ -5,6 +5,7 @@ export type WorkTag =
   | typeof HostText;
 
 export const FunctionComponent = 0;
+// only one root
 export const HostRoot = 3;
 export const HostComponent = 5; // Native div, span
 export const HostText = 6;

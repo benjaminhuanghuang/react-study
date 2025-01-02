@@ -64,5 +64,18 @@ export class FiberRootNode {
     container: Container;
     current: FiberNode;
     finishedWork: FiberNode | null;
-    
+
+    constructor(container: Container, hostRootFiber: FiberNode) {
+        this.container = container;
+        this.current = hostRootFiber;
+        hostRootFiber.stateNode = this;
+        this.finishedWork = null;
+    }
+}
+
+export const createWorkInProgress = (current: FiberNode, pendingProps: Props) : FiberNode => {
+    let wip = current.alternate;
+    if(wip === null) {
+        // mount
+    }
 }
