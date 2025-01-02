@@ -16,4 +16,5 @@ tsconfig
 - element
 _jsx() will return element object
 
--fiber
+- fiber
+Describe the element status during the rendering.
