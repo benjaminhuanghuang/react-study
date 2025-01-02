@@ -2,8 +2,12 @@
 
 Monorepo + pnpm + vite + vitest
 
+前端跳槽突围课：React18底层源码深入剖析 - 高少云
+https://coding.imooc.com/class/818.html
+
 https://www.bilibili.com/video/BV1SDm2Y3ETD
 
+https://www.bilibili.com/video/BV1NvCzYvEBT   2025
 
 ## Setup
 ```sh
@@ -43,5 +47,7 @@ Leetcode 703. Kth Largest Element in a Stream
 MiniHeap
 
 
+## VDOM
+Reconcile : sync the VDOM with real DOM
 
 
