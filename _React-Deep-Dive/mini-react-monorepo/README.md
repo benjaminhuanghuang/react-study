@@ -1,4 +1,4 @@
-# My Mini React
+# My Mini React monorepo
 
 Monorepo + pnpm + vite + vitest
 
@@ -19,7 +19,7 @@ npm create vite examples --template react-ts
 mkdir packages
 ```
 
-setup monorepo
+Setup monorepo
 create pnpm-workspace.yaml
 ```sh
 mkdir react && cd react && pnpm init

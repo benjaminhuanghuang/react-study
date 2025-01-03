@@ -7,5 +7,7 @@ export type WorkTag =
 export const FunctionComponent = 0;
 // only one root
 export const HostRoot = 3;
-export const HostComponent = 5; // Native div, span
+// Native <div>
+export const HostComponent = 5; 
+// <div>123</div> 123
 export const HostText = 6;
