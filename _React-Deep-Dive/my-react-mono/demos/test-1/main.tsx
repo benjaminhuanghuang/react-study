@@ -1,5 +1,8 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+console.log("Hello World");	
+let element = (
+    <h1>
+        hello<span style={{color: `red`}}>world</span>
+    </h1>
+)
 
-function App() {
-	return _jsx('div', { children: 'Hello world!' });
-}
+console.log(element);
