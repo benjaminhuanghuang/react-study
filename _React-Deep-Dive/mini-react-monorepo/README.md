@@ -9,6 +9,8 @@ https://www.bilibili.com/video/BV1SDm2Y3ETD
 
 https://www.bilibili.com/video/BV1NvCzYvEBT   2025
 
+https://pan.baidu.com/s/1KiXQ93iYmRnYDTKnoL75QA?pwd=84ca
+
 ## Setup
 ```sh
 npm init -y

@@ -1,10 +1,5 @@
-# 《手写 React 源码》
+# Setup mono repo
 
-https://github.com/2xiao/my-react
-
-Monorepo + eslint + commitlint + tsc + prettier + rollup
-
-## Setup mono repo
 ```sh
 pnpm init
 
@@ -13,7 +8,7 @@ touch pnpm-workspace.yaml
 ```
 pnpm-workspace.yaml define the root folder of the workspace
 
-### Setup eslint
+## Setup eslint
 ```sh
 pnpm i eslint -D -w
 pnpm i -D -w @typescript-eslint/eslint-plugin, @typescript-eslint/parser, typescript
@@ -29,7 +24,7 @@ Install eslint plugin for ts
 pnpm i @typescript-eslint/eslint-plugin -D -w
 ```
 
-### setup prettier
+## setup prettier
 ```sh
 pnpm i prettier -D -w
 ```
@@ -46,7 +41,7 @@ Add lint script to package.json
 ```
 "lint": "eslint --ext .ts,.jsx,.tsx --fix --quiet ./packages"
 ```
-### Setup commit rule
+## Setup commit rule
 https://medium.com/@abpeter14/how-to-install-commitlint-husky-2024-f1157f14006f
 ```sh
 pnpm i husky -D -w
@@ -74,13 +69,14 @@ npx commitlint --edit $1
 ```
 
 
-### setup typescript
+## setup typescript
 
 Create tsconfig.json
 
-### Setup rollup
+## Setup rollup
 ```sh
 pnpm i rollup -D -w
 
 mkdir scripts/rollup
 ```
+

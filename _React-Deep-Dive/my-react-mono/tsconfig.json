@@ -1,5 +1,3 @@
-// tsconfig.json
-
 {
 	"compileOnSave": true,
 	"include": ["./packages/**/*"],
