@@ -11,3 +11,5 @@ Add package.json script
 ```json
     "dev": "vite"
 ```
+Vite detects the .jsx file and passes it through the JSX Babel plugin @vitejs/plugin-react.
+If you're using React 17+, the JSX is transformed into calls to jsxDEV from jsx-dev-runtime.ts.

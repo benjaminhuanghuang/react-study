@@ -27,7 +27,6 @@ function ReactJSXElement(type, key, ref, props) {
 }
 
 export function jsxDEV(type, config) {
-
   let props = {};
   let key = null;
   let ref = null;

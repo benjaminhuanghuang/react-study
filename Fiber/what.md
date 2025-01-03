@@ -1,4 +1,7 @@
 # What is Fiber
+- fiber reconciler
+- vDom
+- dynamic 
 
 A Fiber is a plain JS object, = unit of work processed by function like beginWork() and completeWork()
 
