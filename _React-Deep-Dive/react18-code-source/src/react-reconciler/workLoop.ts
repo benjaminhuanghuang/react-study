@@ -28,5 +28,52 @@ function markUpdateFromFiberToRoot(fiber: FiberNode) {
     return null;
 }
 
+function renderRoot(root: FiberRootNode) {
+    prepareFreshStack(root);
+
+    do {
+        try {
+            workLoop();
+            break;
+        }catch (e) {
+            workInProgress = null;
+        }
+    }while(true);
+
+    const finishedWork = root.current.alternate;
+    root.finishedWork = finishedWork;
+
+    // wip fiberNode tree
+    commitRoot(root);
+}
+
+function commitRoot(root: FiberRootNode) {
+    const finishedWork = root.finishedWork;
+    commitWork(finishedWork);
+}
 
 
+function workLoop() {
+    while(workInProgress !== null) {
+        performUnitOfWork(workInProgress);
+    }
+}
+
+function performUnitOfWork(fiber: FiberNode) {
+    const next = beginWork(fiber);
+    fiber.memoizedProps = fiber.pendingProps;
+
+    if(next === null) {
+        completeUnitOfWork(fiber);
+    } else {
+        workInProgress = next;
+    }
+
+}
+
+function completeUnitOfWork(fiber: FiberNode) {
+    let node = fiber;
+    do {
+        completeWork(node);
+    }
+}

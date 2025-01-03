@@ -77,5 +77,33 @@ export const createWorkInProgress = (current: FiberNode, pendingProps: Props) : 
     let wip = current.alternate;
     if(wip === null) {
         // mount
+        wip = new FiberNode(current.tag, pendingProps, current.key);    
+        wip.stateNode = current.stateNode;
+        wip.alternate = current;
+        current.alternate = wip;
+    }else {
+        wip.pendingProps = pendingProps;
+        wip.flags = NoFlags;
+        wip.subtreeFlags = NoFlags;
     }
+    wip.type = current.type;
+    wip.updateQueue = current.updateQueue;
+    wip.child = current.child;
+    wip.memoizedProps = current.memoizedProps;
+    wip.memoizedState = current.memoizedState;
+
+    return wip;
+}
+
+export function createFiberFromElement(element: ReactElementType) : FiberNode { 
+    const {type, key, props} = element;
+    let fiberTag: WorkTag = FunctionComponent;
+    if(typeof type === 'string') {
+        fiberTag = HostComponent;
+    } else if(typeof type !== 'function') {
+        console.warn('Not support', element);
+    }
+    const fiber = new FiberNode(fiberTag, props, key);
+    fiber.type = type;
+    return fiber;
 }
