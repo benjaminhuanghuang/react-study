@@ -2,5 +2,7 @@
 
 https://github.com/2xiao/my-react
 
-Monorepo + eslint + commitlint + tsc + prettier + rollup
+Monorepo + ts + eslint + prettier + husky + + commitlint + rollup + vite
+
+
 
