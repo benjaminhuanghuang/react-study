@@ -164,3 +164,10 @@ export function requestDeferredLane(): Lane {
 
   return workInProgressDeferredLane;
 }
+
+export function markSkippedUpdateLanes(lane: Lane | Lanes): void {
+  workInProgressRootSkippedLanes = mergeLanes(
+    lane,
+    workInProgressRootSkippedLanes,
+  );
+}

@@ -18,10 +18,10 @@ function hasValidRef(config) {
 function ReactJSXElement(type, key, ref, props) {
   const element = {
     $$typeof: REACT_ELEMENT_TYPE,
-    type,
+    type, // h1, span
     key,
-    ref,
-    props,
+    ref, // ref to real dom
+    props, // children, style
   };
   return element;
 }
@@ -38,7 +38,7 @@ export function jsxDEV(type, config) {
   }
 
   for (let propsName in config) {
-    if(Object.prototype.hasOwnProperty.call(config, propsName) && !RESERVED_PROPS[propsName]) {
+    if (hasOwnProperty.call(config, propsName) && !RESERVED_PROPS[propsName]) {
       props[propsName] = config[propsName];
     }
   }

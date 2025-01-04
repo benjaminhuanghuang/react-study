@@ -47,7 +47,7 @@ function FunctionComponent() {
     </div>
   );
 }
-
+debugger;
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   (<FunctionComponent />) as any
 );
