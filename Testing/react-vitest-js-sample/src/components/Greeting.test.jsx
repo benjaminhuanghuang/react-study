@@ -1,12 +1,19 @@
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect } from "vitest";
 
-import { render, screen } from '@testing-library/react';
-import Greeting from './Greeting';
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
 
-describe('Greeting component', () => {
-    test('renders Greeting component', () => {
-        render(<Greeting />);
-        const divElement = screen.getByRole('generic', { name: '' });
-        expect(divElement).toBeInTheDocument();
-    });
+import Greeting from "./Greeting";
+
+describe("Greeting component", () => {
+  test("renders Greeting component", () => {
+    render(<Greeting />);
+    expect(screen.getByText("Hello, world!")).toBeInTheDocument();
+  });
+
+  test("renders Greeting component with a name", () => {
+    render(<Greeting name={"abc"}/>);
+    expect(screen.getByText("Hello, abc!")).toBeInTheDocument();
+  });
+
 });
