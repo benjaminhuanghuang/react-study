@@ -16,6 +16,7 @@ function hasValidRef(config) {
 
 // return virtual DOM element
 function ReactJSXElement(type, key, ref, props) {
+  debugger
   const element = {
     $$typeof: REACT_ELEMENT_TYPE,
     type, // h1, span
@@ -27,6 +28,8 @@ function ReactJSXElement(type, key, ref, props) {
 }
 
 export function jsxDEV(type, config) {
+  console.log("jsxDEVxx----", type);
+  debugger;
   let props = {};
   let key = null;
   let ref = null;

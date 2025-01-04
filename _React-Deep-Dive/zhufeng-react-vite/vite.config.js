@@ -13,7 +13,10 @@ export default defineConfig({
       shared: path.posix.resolve("src/shared"),
     },
   },
+  server: {
+    sourcemap: true,
+  },
   build: {
-    sourcemap: true, // Enable sourcemaps in the build output
+    sourcemap: true
   },
 });

@@ -1,7 +1,6 @@
-
 let element = (
     <h1>
-        hello<span style={{color: `red`}}>world</span>
+        hello<span style={{color: `black`}}>world</span>
     </h1>
 )
 

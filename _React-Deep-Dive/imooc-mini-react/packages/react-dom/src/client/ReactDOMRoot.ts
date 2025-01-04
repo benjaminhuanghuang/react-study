@@ -21,6 +21,7 @@ ReactDOMRoot.prototype.render = function (children: ReactNodeList) {
 };
 
 export function createRoot(container: Container): RootType {
+  debugger
   const root: FiberRoot = createFiberRoot(container);
 
   listenToAllSupportedEvents(container);
