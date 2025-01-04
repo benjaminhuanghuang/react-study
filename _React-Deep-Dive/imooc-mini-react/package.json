@@ -1,5 +1,5 @@
 {
-  "name": "my-mini-react",
+  "name": "imooc-mini-react",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,5 +11,6 @@
   "license": "ISC",
   "devDependencies": {
     "vitest": "^2.1.8"
-  }
+  },
+  "packageManager": "pnpm@9.12.0"
 }
