@@ -12,3 +12,7 @@ Install dependency:
 
 create config fie scripts/vite/vite.config.js
 
+run sample
+```json
+"demo": "vite serve demos/test-1 --config scripts/vite/vite.config.js --force"
+```
