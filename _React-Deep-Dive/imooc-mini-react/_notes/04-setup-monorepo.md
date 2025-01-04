@@ -31,7 +31,7 @@ cd examples
 pnpm i
 pnpm dev
 ```
-At this point, the example app is using official React library
+In /examples/which-react.ts import the mint-react library
 
 ## Run test
 ```sh

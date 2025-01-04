@@ -13,8 +13,3 @@ https://pan.baidu.com/s/1KiXQ93iYmRnYDTKnoL75QA?pwd=84ca
 
 
 
-
-## VDOM
-Reconcile : sync the VDOM with real DOM
-
-
