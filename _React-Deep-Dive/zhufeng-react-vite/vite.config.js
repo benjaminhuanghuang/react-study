@@ -12,11 +12,6 @@ export default defineConfig({
       scheduler: path.posix.resolve("src/scheduler"),
       shared: path.posix.resolve("src/shared"),
     },
-  },
-  server: {
-    sourcemap: true,
-  },
-  build: {
-    sourcemap: true
-  },
+  }
 });
+         
