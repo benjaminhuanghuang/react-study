@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import validator from "validator";
-
 
 export default function LoginForm() {
   const [signupInput, setSignupInput] = useState({
@@ -8,7 +7,7 @@ export default function LoginForm() {
     password: "",
     confirmPassword: "",
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setSignupInput({
@@ -17,17 +16,19 @@ export default function LoginForm() {
     });
   };
 
-  const handleClick = (e) =>{
+  const handleClick = (e) => {
     e.preventDefault();
     //
-    if(!validator.isEmail(signupInput.email)){
-      return setError('The email you input is invalid.');
-    } else if (signupInput.password.length < 5){
-      return setError( 'The password you entered should contain 5 or more characters.');
-    } else if(signupInput.password !== signupInput.confirmPassword){
+    if (!validator.isEmail(signupInput.email)) {
+      return setError("The email you input is invalid.");
+    } else if (signupInput.password.length < 5) {
+      return setError(
+        "The password you entered should contain 5 or more characters."
+      );
+    } else if (signupInput.password !== signupInput.confirmPassword) {
       return setError("The passwords don't match. Try again.");
     }
-  }
+  };
 
   return (
     <div className="container my-5">
@@ -71,10 +72,10 @@ export default function LoginForm() {
             onChange={handleChange}
           />
         </div>
-        {
-          error && <p className="text-danger">{error}</p>
-        }
-        <button type="submit" className="btn btn-primary" onClick={handleClick}>Submit</button>
+        {error && <p className="text-danger">{error}</p>}
+        <button type="submit" className="btn btn-primary" onClick={handleClick}>
+          Submit
+        </button>
       </form>
     </div>
   );
