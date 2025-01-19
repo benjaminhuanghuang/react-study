@@ -35,7 +35,7 @@ Create a setup.ts file and import import "@testing-library/jest-dom";
 import "@testing-library/jest-dom";
 ```
 
-Then you can use function toBeVisible()
+Then you can use function toBeVisible() or toHaveTextContent()
 
 ```js
 expect(message).toBeVisible();

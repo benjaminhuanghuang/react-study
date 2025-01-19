@@ -1,6 +1,8 @@
-# React Unit Testing Crash Course: Beginner to Advanced Guide
+# React Testing: Unit Testing React and E2E Testing
 
 https://www.youtube.com/watch?v=iIMaFgeNzc8
+
+https://monsterlessons-academy.com/courses/react-testing-unit-testing-react-and-e2e-testing
 
 ## Setup
 
@@ -19,4 +21,10 @@ defineConfig({
     setupFiles: ["./tests/setup"],
   },
 });
+```
+
+Stop the eslint complain when don't import vitest in js test file
+
+```sh
+npm i -D eslint-plugin-vitest
 ```
