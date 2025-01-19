@@ -8,7 +8,6 @@ export default mergeConfig(
     test: {
       globals: true,
       environment: "jsdom",
-      setupFiles: ["./tests/setup.js"],
     },
   })
 );
