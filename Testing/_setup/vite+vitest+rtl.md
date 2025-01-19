@@ -16,8 +16,8 @@ create vitest.config.ts
 ```js
 defineConfig({
   test: {
-    globals: true,
-    environment: "jsdom",
+    globals: true, // Enable global access to test utilities
+    environment: "jsdom", // Simulates a browser environment
     setupFiles: ["./src/setupTests.ts"],
   },
 });
