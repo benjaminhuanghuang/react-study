@@ -37,6 +37,8 @@ import "@testing-library/jest-dom";
 
 Then you can use function toBeVisible() or toHaveTextContent()
 
+Otherwise, you have to import "@testing-library/jest-dom"; in each test file
+
 ```js
 expect(message).toBeVisible();
 ```

@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=G-4zgIPsjkU
 npm create vite@latest
 
 npm i -D vitest
-npm i -D jsdom @testing-library/react @testing-library/jest-dom
+npm i -D jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event
 ```
 
 When you install @testing-library/jest-dom, it provides custom Jest matchers for asserting on DOM nodes in your tests.
