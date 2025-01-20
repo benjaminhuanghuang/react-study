@@ -1,7 +1,13 @@
+/*
+https://www.youtube.com/watch?v=CxSL0knFxAs
+*/
 import { useEffect, useState } from "react";
 
 function UserProfile({ userId }: { userId: number }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<{
+    name: string;
+    email: string;
+  } | null>(null);
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)

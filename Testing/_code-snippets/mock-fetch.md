@@ -1,9 +1,6 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import UserProfile from "./UserProfile";
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-// Mock are not included in this global configuration. only relevant at compile time for type-checking.
-import { Mock } from "vitest";
+## mockResolvedValueOnce
 
+```js
 describe("UserProfile", () => {
   beforeEach(() => {
     global.fetch = vi.fn();
@@ -30,3 +27,20 @@ describe("UserProfile", () => {
     });
   });
 });
+```
+
+## spyOn
+
+```js
+it("should resolve with mock data on the first call", async () => {
+  // Mock the fetchData function to return a resolved promise with mock data once
+  vi.spyOn(global, "fetch").mockResolvedValueOnce({
+    json: () => Promise.resolve({ id: 1, name: "John Doe" }),
+  });
+
+  const data = await fetchData();
+
+  // Verify the resolved value
+  expect(data).toEqual({ id: 1, name: "John Doe" });
+});
+```

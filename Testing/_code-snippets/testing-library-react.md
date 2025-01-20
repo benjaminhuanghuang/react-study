@@ -1,15 +1,37 @@
+## Test a div
+
+```js
+const divElement = screen.getByText(/Name is Jack/i);
+
+const divElement = screen.getByRole("contentinfo");
+
+expect(divElement).toHaveTextContent("Name is Jack");
+expect(divElement).toHaveAttribute("role", "contentinfo");
 ```
-test('loads and displays greeting', async () => {
-  render(<FetchGreeting />)
 
-  userEvent.click(screen.getByText('Load Greeting'))
+## Test a component list
 
-  await screen.findByRole('heading', {name: 'hello there'})
+```js
+const anchorElements = screen.getAllByRole("navigation");
 
-  expect(screen.getByRole('button')).toHaveAttribute('disabled')
-})
+expect(anchorElements[0]).toHaveTextContent(items[0].name);
+expect(anchorElements[0]).toHaveAttribute("href", items[0].href);
 ```
+
+```js
+test("loads and displays greeting", async () => {
+  render(<FetchGreeting />);
+
+  userEvent.click(screen.getByText("Load Greeting"));
+
+  await screen.findByRole("heading", { name: "hello there" });
+
+  expect(screen.getByRole("button")).toHaveAttribute("disabled");
+});
+```
+
 ## Snapshot
+
 ```
   test('should render correctly', () => {
     const container = render(<App />)
@@ -17,14 +39,16 @@ test('loads and displays greeting', async () => {
   });
 ```
 
-## Find compoent
+## Find component
 
 use regex
+
 ```
   screen.getByRole('button', {name: /pay/i}).toBeEnabled();
 ```
 
 Exist
+
 ```
   test('renders learn react link', () => {
     render(<App />);
@@ -32,7 +56,9 @@ Exist
     expect(linkElement).toBeInTheDocument();
   });
 ```
+
 ## Input
+
 ```
   const userNameField = screen.getByPlaceholderText('Enter user name')
   const passwordField = screen.getByPlaceholderText('Enter password')
@@ -45,17 +71,19 @@ Exist
 ```
 
 ## Wait
+
 ```
   await screen.findByRole('heading', {name: 'hello there'})
 ```
 
-
 ## Enable / Disalbe
+
 ```
   screen.getByRole('button', {name: /pay/i}).toBeEnabled();
 ```
 
 ## Fire evnet
+
 ```
 import {render, fireEvent, waitFor, screen} from '@testing-library/react'
 
@@ -68,16 +96,19 @@ await waitFor(() =>
 ```
 
 ## Check css
-```
+
 ```
 
-
+```
 
 ## references
+
 - 5 Tips to Perfect React Testing Library Queries
+
 ```
  screen.debug();
 ```
+
 ```
   expect(getByText('Button')).toMatchInlineSnapshot(`
     <button>
@@ -85,6 +116,7 @@ await waitFor(() =>
     </button>
   `);
 ```
+
 ```
 expect(getByLabelText('Field')).toMatchInlineSnapshot(`<input />`);
 ```
@@ -92,5 +124,3 @@ expect(getByLabelText('Field')).toMatchInlineSnapshot(`<input />`);
 ```
 expect(within(row1).getByText('Cell')).toBeTruthy();
 ```
-
-
